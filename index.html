@@ -79,18 +79,33 @@ footer a:hover{color:#F47920}
   .pricing-row{grid-template-columns:1fr 1fr!important;gap:16px!important}
   .pricing-row-dark{grid-template-columns:1fr 1fr!important;gap:16px!important}
   .about-poem{width:auto!important;height:auto!important}
-  .place-desc{width:auto!important;height:auto!important}
+  .place-desc{width:auto!important;height:auto!important;text-align:left!important}
   .hero-h1{font-size:clamp(48px,11vw,220px)!important}
   .class-item{grid-template-columns:50px 1fr auto!important}
   .class-item .class-desc{display:none}
+  footer .grid-2col div[style*="text-align:right"]{text-align:left!important}
+  .grid-3col-dance{grid-template-columns:1fr!important}
 }
 @media(max-width:600px){
-  .grid-4col{grid-template-columns:1fr!important}
+  .grid-2col{gap:20px!important}
+  .grid-4col{grid-template-columns:1fr 1fr!important}
   .grid-5col{grid-template-columns:1fr!important}
   .grid-3col-dance{grid-template-columns:1fr!important}
   .pricing-row{grid-template-columns:1fr!important}
   .pricing-row-dark{grid-template-columns:1fr!important}
   #ovl nav a{font-size:clamp(28px,8vw,48px)!important}
+  #ovl .ovl-bottom{font-size:13px!important}
+  .hero-h1{font-size:clamp(42px,12vw,64px)!important}
+  .class-item{grid-template-columns:1fr!important;gap:8px!important;padding:20px 0!important}
+  .class-item span:first-child{display:none}
+  .class-item span:last-child{display:none}
+  .ticker{font-size:clamp(22px,6vw,28px)!important}
+  .cta-primary,.cta-secondary{width:100%!important;justify-content:center!important;font-size:13px!important;padding:16px 20px!important}
+  section[style*="min-height:90svh"] h2{font-size:clamp(40px,11vw,56px)!important}
+}
+@media(max-width:380px){
+  .hero-h1{font-size:38px!important}
+  .class-name{font-size:24px!important}
 }
 </style>
 </head>
