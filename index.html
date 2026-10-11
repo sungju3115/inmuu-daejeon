@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=1200">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>인생뮤직 대전점 | INMUU DAEJEON</title>
 <meta name="description" content="대전 둔산동 성인 취미 음악학원 인생뮤직 대전점. 보컬·피아노·기타·베이스·우쿨렐레·작곡·드럼·랩 1:1 레슨, 무제한 연습실, 매달 퇴근송 오픈마이크.">
 <meta property="og:title" content="인생뮤직 대전점 | INMUU DAEJEON">
 <meta property="og:description" content="대전 둔산동 성인 취미 음악학원. 보컬·피아노·기타·베이스·우쿨렐레·작곡·드럼·랩 1:1 레슨.">
-<meta property="og:image" content="images/og-image.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Archivo+Narrow:wght@700&display=swap" rel="stylesheet">
+<meta property="og:image" content="uploads/P20260613_214557464_BB15385B-EC6B-4DAE-9925-FAB5F9061EA4.JPG">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&amp;family=Archivo+Narrow:wght@700&amp;display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'Paperlogy';font-weight:400;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2')}
 @font-face{font-family:'Paperlogy';font-weight:500;font-style:normal;src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2')}
@@ -27,57 +27,30 @@ img{display:block;max-width:100%}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.06;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes tk{to{transform:translateX(-50%)}}
-#top{min-height:min(100svh,62vw)!important}
-#contact{min-height:min(90svh,56vw)!important}
+@keyframes blobdrift{from{transform:rotate(18deg) translate(0,0)}to{transform:rotate(26deg) translate(6vw,4vh)}}
+@keyframes blobdrift2{from{transform:rotate(-14deg) translate(0,0)}to{transform:rotate(-6deg) translate(-5vw,6vh)}}
+@keyframes blobdrift3{from{transform:rotate(24deg) translate(0,0)}to{transform:rotate(16deg) translate(-6vw,-5vh)}}
 
-/* Ticker ::after pseudo-elements */
-.ticker span::after{content:'+';color:#F47920;margin-left:1em}
-
-/* Overlay nav hover */
-#ovl nav a:hover{font-weight:900;padding-left:.2em}
-
-/* Overlay bottom links hover */
+#ovl nav a:hover{font-weight:900;transform:translateX(.2em)}
 #ovl .ovl-bottom a:hover{text-decoration:underline}
-
-/* Class items hover */
-.class-item:hover{padding-left:16px}
-.class-item .class-name:hover{color:#F47920}
-
-/* Class feature ::before */
+.class-item{transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.class-item:hover{transform:translateX(16px)}
+.class-item .class-name{transition:color .3s ease}
+.class-item:hover .class-name{color:#F47920}
 .class-feature::before{content:'+';color:#F47920;font-weight:900;margin-right:8px}
-
-/* Dance section link hovers */
-.dance-link:hover{color:#F47920}
-
-/* Open Mic blog link hover */
-.openmic-link:hover{color:#F47920}
-
-/* Contact CTA hovers */
 .cta-primary:hover{background:#0B0A09!important;color:#F4EFE8!important}
 .cta-secondary:hover{border-color:#F47920!important;color:#F47920!important}
-
-/* Contact info link hovers */
 .contact-link:hover{color:#F47920}
-
-/* Footer link hovers */
 footer a:hover{color:#F47920}
+.blog-link:hover{color:#F47920}
 
-/* Photo containers */
-.photo-container{position:relative;overflow:hidden;background:#1a1714}
-.photo-container img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.photo-container .photo-overlay{position:absolute;inset:0;pointer-events:none;z-index:1}
-.photo-container .photo-caption{position:absolute;left:18px;bottom:16px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#F4EFE8;opacity:.8;z-index:2}
-
-/* Mobile responsive */
 @media(max-width:900px){
   #ovl{grid-template-columns:1fr!important;padding-top:100px!important}
   #ovl nav{grid-column:1!important}
   .grid-2col{grid-template-columns:1fr!important}
   .grid-1-2{grid-template-columns:1fr!important}
-  .grid-2-1{grid-template-columns:1fr!important}
   .grid-3col{grid-template-columns:1fr!important}
-  .grid-4col{grid-template-columns:1fr 1fr!important}
-  .grid-5col{grid-template-columns:1fr 1fr!important}
+  .grid-5col{grid-template-columns:1fr 1fr!important;gap:20px!important}
   .pricing-row{grid-template-columns:1fr 1fr!important;gap:16px!important}
   .pricing-row-dark{grid-template-columns:1fr 1fr!important;gap:16px!important}
   .about-poem{width:auto!important;height:auto!important}
@@ -85,25 +58,23 @@ footer a:hover{color:#F47920}
   .hero-h1{font-size:clamp(48px,11vw,220px)!important}
   .class-item{grid-template-columns:50px 1fr auto!important}
   .class-item .class-desc{display:none}
-  footer .grid-2col div[style*="text-align:right"]{text-align:left!important}
-  .grid-3col-dance{grid-template-columns:1fr!important}
+  .footer-grid{grid-template-columns:1fr!important}
+  .footer-grid .footer-right{text-align:left!important}
+  .menu-label{font-size:22px!important}
 }
 @media(max-width:600px){
+  #ovl nav a{font-size:clamp(28px,8vw,48px)!important}
   .grid-2col{gap:20px!important}
-  .grid-4col{grid-template-columns:1fr 1fr!important}
   .grid-5col{grid-template-columns:1fr!important}
-  .grid-3col-dance{grid-template-columns:1fr!important}
   .pricing-row{grid-template-columns:1fr!important}
   .pricing-row-dark{grid-template-columns:1fr!important}
-  #ovl nav a{font-size:clamp(28px,8vw,48px)!important}
-  #ovl .ovl-bottom{font-size:13px!important}
   .hero-h1{font-size:clamp(42px,12vw,64px)!important}
   .class-item{grid-template-columns:1fr!important;gap:8px!important;padding:20px 0!important}
   .class-item span:first-child{display:none}
   .class-item span:last-child{display:none}
-  .ticker{font-size:clamp(22px,6vw,28px)!important}
   .cta-primary,.cta-secondary{width:100%!important;justify-content:center!important;font-size:13px!important;padding:16px 20px!important}
-  section[style*="min-height:90svh"] h2{font-size:clamp(40px,11vw,56px)!important}
+  .contact-h2{font-size:clamp(40px,11vw,56px)!important}
+  .menu-label{font-size:18px!important}
 }
 @media(max-width:380px){
   .hero-h1{font-size:38px!important}
@@ -114,23 +85,27 @@ footer a:hover{color:#F47920}
 <body>
 
 <header id="hdr" style="position:fixed;inset:0 0 auto;z-index:60;display:flex;justify-content:space-between;align-items:flex-start;padding:22px clamp(20px,3vw,48px);mix-blend-mode:difference;color:#F4EFE8">
-  <a href="#top" style="display:inline-flex;align-items:center;gap:10px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:15px;letter-spacing:.12em;text-transform:uppercase"><span id="logomark" style="background:#F4EFE8;color:#0B0A09;padding:4px 10px 3px;transform:rotate(-1.5deg);display:inline-block">INMUU</span><span style="font-weight:500;opacity:.7;letter-spacing:.02em">인생뮤직 대전점</span></a>
-  <button id="menuBtn" aria-label="메뉴 열기" style="width:44px;height:44px;border:none;background:none;color:#F4EFE8;cursor:pointer;position:relative">
-    <span id="bar1" style="position:absolute;left:50%;top:50%;width:26px;height:3px;background:currentColor;transform:translate(-50%,-50%);transition:.35s"></span>
-    <span id="bar2" style="position:absolute;left:50%;top:50%;width:26px;height:3px;background:currentColor;transform:translate(-50%,-50%) rotate(90deg);transition:.35s"></span>
-  </button>
+  <a href="#top" onclick="closeMenu()" style="display:inline-flex;align-items:center;gap:10px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:22px;letter-spacing:.12em;text-transform:uppercase"><span id="logomark" style="background:#F4EFE8;color:#0B0A09;padding:4px 10px 3px;transform:rotate(-1.5deg);display:inline-block">INMUU</span><span style="font-weight:500;opacity:.7;letter-spacing:.02em">인생뮤직 대전점</span></a>
 </header>
+<div style="position:fixed;top:22px;right:clamp(20px,3vw,48px);z-index:61">
+  <button id="menuBtn" aria-label="메뉴 열기" onclick="toggleMenu()" style="height:44px;border:none;background:none;color:#0B0A09;cursor:pointer;display:flex;align-items:center;gap:8px;padding:0">
+    <span class="menu-label" style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:28px;letter-spacing:.02em">메뉴</span>
+    <span style="position:relative;width:44px;height:44px;display:block">
+    <span id="bar1" style="position:absolute;left:50%;top:50%;width:26px;height:3px;background:currentColor;transform:translate(-50%,-50%);transition:.35s"></span>
+    <span id="bar2" style="position:absolute;left:50%;top:50%;width:26px;height:3px;background:currentColor;transform:translate(-50%,calc(-50% - 8px));transition:.35s"></span>
+    <span id="bar3" style="position:absolute;left:50%;top:50%;width:26px;height:3px;background:currentColor;transform:translate(-50%,calc(-50% + 8px));transition:.35s"></span>
+    </span>
+  </button>
+</div>
 
 <div id="ovl" style="position:fixed;inset:0;background:#F47920;color:#0B0A09;z-index:55;display:grid;grid-template-columns:1fr 1fr;align-items:start;padding:90px clamp(20px,3vw,48px) 40px;gap:40px;clip-path:inset(0 0 100% 0);transition:clip-path .6s cubic-bezier(.77,0,.18,1);overflow:hidden">
   <svg id="spiro" viewBox="0 0 400 400" fill="none" stroke="#0B0A09" stroke-width=".6" style="position:absolute;left:50%;top:50%;width:min(90vh,90vw);height:min(90vh,90vw);transform:translate(-50%,-50%);opacity:.55;pointer-events:none;animation:spin 120s linear infinite"></svg>
   <nav style="grid-column:2;position:relative;z-index:1">
-    <a href="#about" class="nav-link" style="display:block;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.02em;transition:.25s">About<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:none;vertical-align:top;margin-left:12px;opacity:.6">소개</small></a>
-    <a href="#class" class="nav-link" style="display:block;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.02em;transition:.25s">Class<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:none;vertical-align:top;margin-left:12px;opacity:.6">과목</small></a>
-    <a href="#place" class="nav-link" style="display:block;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.02em;transition:.25s">Place<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:none;vertical-align:top;margin-left:12px;opacity:.6">공간</small></a>
-    <a href="#dance" class="nav-link" style="display:block;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.02em;transition:.25s">Dance<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:none;vertical-align:top;margin-left:12px;opacity:.6">인생댄스</small></a>
-    <a href="#contents" class="nav-link" style="display:block;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.02em;transition:.25s">Contents<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:none;vertical-align:top;margin-left:12px;opacity:.6">콘텐츠</small></a>
-    <a href="#pricing" class="nav-link" style="display:block;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.02em;transition:.25s">Pricing<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:none;vertical-align:top;margin-left:12px;opacity:.6">수강료</small></a>
-    <a href="#contact" class="nav-link" style="display:block;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.02em;transition:.25s">Contact<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:none;vertical-align:top;margin-left:12px;opacity:.6">상담 문의</small></a>
+    <a href="#about" onclick="closeMenu()" style="display:flex;align-items:baseline;gap:16px;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(44px,6vw,84px);line-height:1;letter-spacing:-.02em;will-change:transform;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease">About<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:clamp(18px,1.8vw,26px);letter-spacing:.02em;text-transform:none;opacity:.6">소개</small></a>
+    <a href="#class" onclick="closeMenu()" style="display:flex;align-items:baseline;gap:16px;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(44px,6vw,84px);line-height:1;letter-spacing:-.02em;will-change:transform;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease">Class<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:clamp(18px,1.8vw,26px);letter-spacing:.02em;text-transform:none;opacity:.6">과목</small></a>
+    <a href="#contents" onclick="closeMenu()" style="display:flex;align-items:baseline;gap:16px;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(44px,6vw,84px);line-height:1;letter-spacing:-.02em;will-change:transform;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease">Community<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:clamp(18px,1.8vw,26px);letter-spacing:.02em;text-transform:none;opacity:.6">커뮤니티</small></a>
+    <a href="#pricing" onclick="closeMenu()" style="display:flex;align-items:baseline;gap:16px;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(44px,6vw,84px);line-height:1;letter-spacing:-.02em;will-change:transform;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease">Pricing<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:clamp(18px,1.8vw,26px);letter-spacing:.02em;text-transform:none;opacity:.6">수강료</small></a>
+    <a href="#contact" onclick="closeMenu()" style="display:flex;align-items:baseline;gap:16px;padding:6px 0;font-family:'Archivo','Paperlogy',sans-serif;font-weight:500;text-transform:uppercase;font-size:clamp(44px,6vw,84px);line-height:1;letter-spacing:-.02em;will-change:transform;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease">Contact<small style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:clamp(18px,1.8vw,26px);letter-spacing:.02em;text-transform:none;opacity:.6">상담 문의</small></a>
   </nav>
   <div class="ovl-bottom" style="position:absolute;left:clamp(20px,3vw,48px);bottom:40px;font-size:14px;font-weight:600;line-height:1.9;opacity:.85;z-index:1">
     <b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;letter-spacing:.2em;font-size:11px;margin-bottom:6px">INMUU DAEJEON</b>
@@ -143,28 +118,33 @@ footer a:hover{color:#F47920}
   </div>
 </div>
 
-<section id="top" style="min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px clamp(20px,3vw,48px) 0;position:relative">
-  <div style="position:absolute;left:50%;top:-10%;width:60vw;height:60vw;max-width:900px;max-height:900px;transform:translateX(-50%);background:radial-gradient(circle,rgba(244,121,32,.22),transparent 60%);pointer-events:none;filter:blur(10px)"></div>
-  <p style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,20px);letter-spacing:.02em;text-transform:uppercase;line-height:1.45;max-width:1100px"><em style="font-style: normal; color: rgb(244, 121, 32); font-size: 28px;">평범한 일상에 음악을 더하다 +</em></p>
-  <p style="font-family: 'Paperlogy',sans-serif; font-weight: 500; font-size: 18px; line-height: 1.45; opacity: .8; margin-top: 10px">대전 대표 성인 전문 음악학원 <b style="font-weight:700">인생뮤직</b></p>
-  <h1 class="hero-h1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(64px,13vw,220px);line-height:.85;letter-spacing:-.04em;margin:28px 0 0 -0.04em"><span style="display:block">Add</span><span style="display:block">Music <span style="color:#F47920">+</span></span><span style="display:block">To Your</span><span style="display:block">Ordinary</span></h1>
+<section id="top" style="min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px clamp(20px,3vw,48px) 0;position:relative;background:#F47920;color:#0B0A09;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none">
+    <div style="position:absolute;left:-12%;top:-30%;width:46vw;height:80vh;background:#E8E4DC;border-radius:50%;box-shadow:0 40px 80px -20px rgba(11,10,9,.35),0 12px 30px -10px rgba(11,10,9,.2);transform:rotate(18deg);animation:blobdrift 18s ease-in-out infinite alternate"></div>
+    <div style="position:absolute;right:-8%;top:6%;width:34vw;height:70vh;background:#E8E4DC;border-radius:50%;box-shadow:0 40px 80px -20px rgba(11,10,9,.35),0 12px 30px -10px rgba(11,10,9,.2);transform:rotate(-14deg);animation:blobdrift2 22s ease-in-out infinite alternate"></div>
+    <div style="position:absolute;left:34%;bottom:-38%;width:40vw;height:74vh;background:#E8E4DC;border-radius:50%;box-shadow:0 40px 80px -20px rgba(11,10,9,.35),0 12px 30px -10px rgba(11,10,9,.2);transform:rotate(24deg);animation:blobdrift3 26s ease-in-out infinite alternate"></div>
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" fill="none" stroke="#0B0A09" stroke-width="1.4">
+      <ellipse cx="700" cy="430" rx="520" ry="210" transform="rotate(-16 700 430)"></ellipse>
+      <ellipse cx="1150" cy="330" rx="430" ry="500" transform="rotate(28 1150 330)"></ellipse>
+      <ellipse cx="300" cy="700" rx="380" ry="150" transform="rotate(-10 300 700)"></ellipse>
+    </svg>
+    <svg viewBox="0 0 100 100" style="position:absolute;right:16%;top:14%;width:84px;height:84px" fill="#0B0A09"><path d="M50 0 Q56 44 100 50 Q56 56 50 100 Q44 56 0 50 Q44 44 50 0"></path></svg>
+    <svg viewBox="0 0 100 100" style="position:absolute;left:12%;top:46%;width:44px;height:44px" fill="none" stroke="#0B0A09" stroke-width="3"><path d="M50 4 Q56 44 96 50 Q56 56 50 96 Q44 56 4 50 Q44 44 50 4"></path></svg>
+  </div>
+  <p style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:clamp(15px,1.5vw,20px);letter-spacing:.02em;text-transform:uppercase;line-height:1.45;max-width:1100px;position:relative"><em style="font-style:normal;color:#0B0A09;font-size:28px;">평범한 일상에 음악을 더하다 +</em></p>
+  <p style="font-family:'Paperlogy',sans-serif;font-weight:500;font-size:18px;line-height:1.45;opacity:.8;margin-top:10px;position:relative">대전 대표 성인 전문 음악학원 <b style="font-weight:700">인생뮤직</b></p>
+  <h1 class="hero-h1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(64px,13vw,220px);line-height:.85;letter-spacing:-.04em;margin:28px 0 0 -0.04em;position:relative"><span style="display:block">Add</span><span style="display:block">Music <span style="color:#F4EFE8">+</span></span><span style="display:block">To Your</span><span style="display:block">Ordinary</span></h1>
   <div class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:36px calc(clamp(20px,3vw,48px) * -1) 0">
-    <div class="photo-container" style="aspect-ratio:4/3"><img src="images/hero-01.jpg" alt="인생뮤직 대전점"><div class="photo-overlay" style="background:radial-gradient(ellipse at 30% 30%,rgba(244,121,32,.45),transparent 55%),linear-gradient(160deg,rgba(42,37,34,.4),rgba(11,10,9,.3))"></div></div>
-    <div class="photo-container" style="aspect-ratio:4/3"><img src="images/hero-02.jpg" alt="인생뮤직 대전점"><div class="photo-overlay" style="background:radial-gradient(ellipse at 70% 60%,rgba(244,121,32,.35),transparent 55%),linear-gradient(200deg,rgba(34,30,27,.4),rgba(11,10,9,.3))"></div></div>
+    <div style="position:relative;overflow:hidden;background:#E8E4DC;aspect-ratio:4/3"><img src="uploads/P20260613_214557464_BB15385B-EC6B-4DAE-9925-FAB5F9061EA4.JPG" alt="인생뮤직 대전점 라운지 전경" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
+    <div style="position:relative;overflow:hidden;background:#E8E4DC;aspect-ratio:4/3"><img src="uploads/P20260629_220252461_4FCCED91-716C-4BCC-9913-60DF5F4B1E05.JPG" alt="인생뮤직 대전점 라운지 무대" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div>
   </div>
 </section>
-
-<div style="border-top:1px solid rgba(11,10,9,.14);border-bottom:1px solid rgba(11,10,9,.14);overflow:hidden;white-space:nowrap;padding:16px 0;background:#FFFFFF">
-  <div class="ticker" style="display:inline-block;animation:tk 40s linear infinite;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);letter-spacing:-.02em;line-height:1">
-    <span style="margin:0 .5em">Vocal</span><span style="margin:0 .5em">Piano</span><span style="margin:0 .5em">Guitar</span><span style="margin:0 .5em">Bass</span><span style="margin:0 .5em">Ukulele</span><span style="margin:0 .5em">Compose</span><span style="margin:0 .5em">Drum</span><span style="margin:0 .5em">Rap</span><span style="margin:0 .5em">Vocal</span><span style="margin:0 .5em">Piano</span><span style="margin:0 .5em">Guitar</span><span style="margin:0 .5em">Bass</span><span style="margin:0 .5em">Ukulele</span><span style="margin:0 .5em">Compose</span><span style="margin:0 .5em">Drum</span><span style="margin:0 .5em">Rap</span>
-  </div>
-</div>
 
 <section id="about" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px);border-top:1px solid rgba(11,10,9,.14)">
   <div class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
     <div data-reveal="1">
       <div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">About Us</div>
-      <p class="about-poem" style="font-size: 24px; line-height: 1.9; opacity: .92; margin-top: 40px; font-weight: 600; width: 644px; height: 366px">음악도 즐거움도 포기할 수 없는 사람들을 위해.<br>
+      <p class="about-poem" style="font-size:24px;line-height:1.9;opacity:.92;margin-top:40px;font-weight:600;max-width:644px">음악도 즐거움도 포기할 수 없는 사람들을 위해.<br>
       인생뮤직 대전점은 성인 취미 전문 실용음악학원입니다.<br>
       레슨은 1:1로, 연습은 무제한으로.<br>
       한 달에 한 번, 라운지의 조명이 꺼지면 무대가 켜집니다.<br>
@@ -187,44 +167,50 @@ footer a:hover{color:#F47920}
   </div>
 </section>
 
-<section id="class" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px);background:#F4EFE8;color:#0B0A09">
-  <div data-reveal="1" class="grid-1-2" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
-    <div><div style="font-family: Inter; font-weight: 800; font-size: 14px; letter-spacing: .22em; text-transform: uppercase; color: #F47920">Class</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">Eight<br>Ways <span style="color:#F47920">In</span></h2></div>
-    <p style="font-size: 20px; opacity: .7; max-width: 560px; justify-self: end; align-self: end; font-weight: 500; text-align: right">주 1회 60분, 1:1 레슨! <br>수준과 목표에 맞춰 커리큘럼을 함께 짭니다.</p>
-  </div>
-  <div data-reveal="1" style="border-top:2px solid #0B0A09">
-    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">01</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s">Vocal</span><span class="class-desc" style="font-size: 24px; opacity: .7">보컬 / 레코딩</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
-    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">02</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s">Piano</span><span class="class-desc" style="font-size: 24px; opacity: .7">피아노 / 반주</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
-    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">03</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s">Guitar</span><span class="class-desc" style="font-size: 24px; opacity: .7">통기타 / 일렉기타</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
-    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">04</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s">Bass</span><span class="class-desc" style="font-size: 24px; opacity: .7">베이스</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
-    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">05</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s">Ukulele</span><span class="class-desc" style="font-size: 24px; opacity: .7">우쿨렐레</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
-    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">06</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s">Compose</span><span class="class-desc" style="font-size: 24px; opacity: .7">작곡 / 미디</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
-    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">07</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s">Drum</span><span class="class-desc" style="font-size: 24px; opacity: .7">드럼</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
-    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">08</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s">Rap</span><span class="class-desc" style="font-size: 24px; opacity: .7">랩</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
-  </div>
-  <div data-reveal="1" style="margin-top:36px;display:flex;gap:40px;flex-wrap:wrap;font-size:14px;font-weight:600"><span class="class-feature">1:1 개인 레슨</span><span class="class-feature">주 1회 60분</span><span class="class-feature">고정 요일·시간</span><span class="class-feature">하루 전 연락 시 이동·보강</span></div>
-</section>
-
 <section id="place" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px)">
   <div data-reveal="1" class="grid-1-2" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
     <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Our Place</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">Where<br>We <span style="color:#F47920">Play</span></h2></div>
-    <p style="font-size: 20px; opacity: .85; max-width: 560px; justify-self: end; align-self: end; text-align: right">둔산동 한복판, 5층 501호. <br>이야기를 나누는 라운지와, 레슨과 연습이 이루어지는 스튜디오.</p>
+    <p class="place-desc" style="font-size:20px;opacity:.85;max-width:560px;justify-self:end;align-self:end;text-align:right">둔산동 한복판, 5층 501호. <br>이야기를 나누는 라운지와, 레슨과 연습이 이루어지는 스튜디오.</p>
   </div>
-  <div data-reveal="1" class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 calc(clamp(20px,3vw,48px) * -1)">
-    <div class="photo-container" style="aspect-ratio:4/3"><img src="images/lounge-01.jpg" alt="인생뮤직 대전점 라운지" loading="lazy"><div class="photo-overlay" style="background:radial-gradient(ellipse at 30% 30%,rgba(244,121,32,.45),transparent 55%),linear-gradient(160deg,rgba(42,37,34,.3),rgba(11,10,9,.2))"></div></div>
-    <div class="photo-container" style="aspect-ratio:4/3"><img src="images/lounge-02.jpg" alt="인생뮤직 대전점 라운지" loading="lazy"><div class="photo-overlay" style="background:linear-gradient(160deg,rgba(43,38,35,.3),rgba(11,10,9,.2))"></div></div>
+  <div data-reveal="1" style="margin:0 calc(clamp(20px,3vw,48px) * -1)">
+    <img src="uploads/P20260327_173148480_5879121D-A2DF-4328-85CE-9160ACDF9BD1.JPG" alt="인생뮤직 대전점 라운지 무대" loading="lazy" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#E8E4DC">
   </div>
   <div data-reveal="1" class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:36px 0 60px">
     <h3 style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,3.4vw,48px);letter-spacing:-.02em;line-height:1"><span style="color:#F47920;margin-right:14px">①</span>Lounge</h3>
-    <p class="place-desc" style="font-size: 20px; opacity: .8; max-width: 520px; line-height: 1.75; width: 700px; height: 101px; text-align: right">라운지에서는 이야기를 나누고, 공연도 하고, 영화도 보고, <br>쉴 수도 있어요. 레슨 전후로 편하게 머무는 인뮤의 거실이자, <br>한 달에 한 번은 무대가 됩니다.</p>
+    <p class="place-desc" style="font-size:20px;opacity:.8;max-width:520px;line-height:1.75;text-align:right">라운지에서는 이야기를 나누고, 공연도 하고, 영화도 보고, <br>쉴 수도 있어요. 레슨 전후로 편하게 머무는 인뮤의 거실이자, <br>한 달에 한 번은 무대가 됩니다.</p>
   </div>
-  <div data-reveal="1" class="grid-2-1" style="display:grid;grid-template-columns:2fr 1fr;gap:10px;margin:0 calc(clamp(20px,3vw,48px) * -1)">
-    <div class="photo-container" style="aspect-ratio:4/3"><img src="images/studio-01.jpg" alt="인생뮤직 대전점 스튜디오" loading="lazy"><div class="photo-overlay" style="background:radial-gradient(ellipse at 80% 20%,rgba(244,121,32,.3),transparent 50%),linear-gradient(200deg,rgba(36,32,29,.3),rgba(11,10,9,.2))"></div></div>
-    <div class="photo-container" style="aspect-ratio:4/3"><img src="images/studio-02.jpg" alt="인생뮤직 대전점 스튜디오" loading="lazy"><div class="photo-overlay" style="background:linear-gradient(160deg,rgba(31,27,24,.3),rgba(11,10,9,.2))"></div></div>
+  <div data-reveal="1" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:0 calc(clamp(20px,3vw,48px) * -1);padding:0 clamp(20px,3vw,48px) 12px">
+    <img src="uploads/P20260223_220528949_7A825E77-D4A0-4E9A-9D04-728FFC60F3D1.JPG" alt="라운지 1" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260328_195003263_3819075E-6CC1-45D2-9501-CB9EAD892ECA.JPG" alt="라운지 2" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260328_194927943_B013E9B3-3247-426E-AC49-2E83089856EF.JPG" alt="라운지 3" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260328_195237532_B21A9B72-8A78-40AF-BF1F-A2755CDA924D.JPG" alt="라운지 4" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260327_172948025_766BF409-D8C1-466D-80F6-4D45CF2B784F.JPG" alt="라운지 5" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260327_173046143_FCA1335E-4361-44A2-B0CC-80E0E477B4B6.JPG" alt="라운지 6" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260328_195518404_7FF90BEA-9802-427F-9822-C2EA1A5BBC6D.JPG" alt="라운지 7" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260720_204147328_E52AEA3D-9BE8-4CDB-A9BE-EBB3ABD7EFD1.JPG" alt="스튜디오 1" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260720_212143131_25C110B6-8127-4BAA-A4D0-0A5B45E18566.JPG" alt="스튜디오 2" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260722_201650239_028B40AA-5F02-42C5-BC88-998CA1EB11C7.JPG" alt="스튜디오 3" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260724_153524873_3CAE0F6D-5CDA-47EC-8D31-A18B2839D255.JPG" alt="스튜디오 4" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260727_203855407_9870156B-E01C-4A7A-8DB9-32A054122EFF.JPG" alt="스튜디오 5" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260727_203857856_D691E26F-27E2-48FC-B997-03260917D967.JPG" alt="스튜디오 6" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260730_201127439_78CB1721-83D8-4A02-A7A9-E8003FB9AAF2.JPG" alt="스튜디오 7" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260730_201130717_8394A7C0-80E6-41C1-B5EB-CAC1A8926174.JPG" alt="스튜디오 8" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260730_201155310_8E554CE3-9AA3-47D4-9646-D8BBFA06E872.JPG" alt="스튜디오 9" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260820_194650696_010AF726-EBFD-4505-B1CC-20A97EE85B11.JPG" alt="스튜디오 10" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260820_195000567_D42CD3EF-D3D1-4546-AD88-5B3791B92323.JPG" alt="스튜디오 11" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260820_195015313_DBBF43F5-B7D3-4B31-A0DB-A4184EBDAA4F.JPG" alt="스튜디오 12" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260820_195016985_A0E4FF90-7818-43B4-9B2F-5C273F3E6F79.JPG" alt="스튜디오 13" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260821_212630610_94459F8D-F102-4E7D-B24E-78536949A6E3.JPG" alt="스튜디오 14" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260825_212615389_8B499DC7-5FEC-4BD8-9276-BB969B676B53.JPG" alt="스튜디오 15" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260825_212734363_61E471FC-64F6-4AE6-B1E5-61D8169DE5F6.JPG" alt="스튜디오 16" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260825_212820195_3EE0CE10-651D-4165-A323-AC9488E4FEB6.JPG" alt="스튜디오 17" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260825_212842708_95874D43-D2C0-4D15-867C-D01FE5C3805C.JPG" alt="스튜디오 18" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260827_183804772_A5160E7C-35AC-478A-9D0F-88AA3EFB880A.JPG" alt="스튜디오 19" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260827_183915984_7D2E1D72-98EA-45A9-804B-4BA59CD8A4E2.JPG" alt="스튜디오 20" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
   </div>
   <div data-reveal="1" class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:36px 0 60px">
     <h3 style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,3.4vw,48px);letter-spacing:-.02em;line-height:1"><span style="color:#F47920;margin-right:14px">②</span>Lesson Studio</h3>
-    <p style="font-size: 20px; opacity: .8; max-width: 520px; line-height: 1.75; text-align: right">레슨과 연습은 여기서 이루어져요. 업라이트 피아노룸, <br>마스터 키보드와 모니터 스피커가 있는 작곡룸, <br>보컬 레코딩룸, 기타·베이스룸까지 과목별 스튜디오.</p>
+    <p class="place-desc" style="font-size:20px;opacity:.8;max-width:520px;line-height:1.75;text-align:right">레슨과 연습은 여기서 이루어져요. 업라이트 피아노룸, <br>마스터 키보드와 모니터 스피커가 있는 작곡룸, <br>보컬 레코딩룸, 기타·베이스룸까지 과목별 스튜디오.</p>
   </div>
 </section>
 
@@ -232,71 +218,111 @@ footer a:hover{color:#F47920}
   <div data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase">Practice</div>
   <p data-reveal="1" style="margin-top:20px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(44px,9vw,150px);line-height:.85;letter-spacing:-.04em">Practice<br>Anytime.<br>No Limits.</p>
   <ul data-reveal="1" class="grid-3col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px;border-top:2px solid #0B0A09">
-    <li style="padding:28px 24px 28px 0;border-bottom:2px solid #0B0A09;font-weight:700;font-size:18px"><b style="display: block; font-family: Archivo, Paperlogy, sans-serif; font-size: 12px; letter-spacing: 0.2em; margin-bottom: 10px; opacity: 0.7;">Practice Room</b>레슨 이외의 시간, <br>빈 연습실에서 얼마든지 연습 가능</li>
-    <li style="padding:28px 24px;border-bottom:2px solid #0B0A09;border-left:2px solid #0B0A09;font-weight:700;font-size:18px"><b style="display: block; font-family: Archivo, Paperlogy, sans-serif; font-size: 12px; letter-spacing: 0.2em; margin-bottom: 10px; opacity: 0.7;">Instruments</b>피아노 · 기타 · 베이스 · 우쿨렐레.<br>모든 악기는 여러분을 위한 것, 무료 대여</li>
+    <li style="padding:28px 24px 28px 0;border-bottom:2px solid #0B0A09;font-weight:700;font-size:18px"><b style="display:block;font-family:Archivo,Paperlogy,sans-serif;font-size:12px;letter-spacing:0.2em;margin-bottom:10px;opacity:0.7">Practice Room</b>레슨 이외의 시간, <br>빈 연습실에서 얼마든지 연습 가능</li>
+    <li style="padding:28px 24px;border-bottom:2px solid #0B0A09;border-left:2px solid #0B0A09;font-weight:700;font-size:18px"><b style="display:block;font-family:Archivo,Paperlogy,sans-serif;font-size:12px;letter-spacing:0.2em;margin-bottom:10px;opacity:0.7">Instruments</b>피아노 · 기타 · 베이스 · 우쿨렐레.<br>모든 악기는 여러분을 위한 것, 무료 대여</li>
     <li style="padding:28px 24px;border-bottom:2px solid #0B0A09;border-left:2px solid #0B0A09;font-weight:700;font-size:18px"><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:12px;letter-spacing:.2em;margin-bottom:10px;opacity:.7">Sheet Music</b>연습에 필요한 악보는 무제한 출력</li>
   </ul>
 </section>
 
-<section id="dance" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px);border-top:1px solid rgba(11,10,9,.14)">
-  <div class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
-    <div data-reveal="1">
-      <div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Life Dance Studio</div>
-      <h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,96px);line-height:.9;letter-spacing:-.03em">Move<br>Your <span style="color:#F47920">Body</span><span style="font-family:'Paperlogy',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.04em;display:block;font-size:clamp(22px,2.8vw,40px);margin-top:14px">인생댄스 Studio 대전점</span></h2>
-    </div>
-    <div data-reveal="1">
-      <p style="font-size: 20px; line-height: 1.8; opacity: .85; max-width: 520px; text-align: left">보컬/악기와는 또 다른 즐거움, <br>K-POP 취미댄스를 인생댄스 Studio에서 시작해보세요. <br>퇴근 후 1시간, 나로써 빛나는 순간. <br>인생뮤직학원 대전점과 같은 자리에서 운영됩니다.</p>
-      <ul class="grid-3col-dance" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:40px">
-        <li style="border:1px solid rgba(11,10,9,.14);padding:24px 22px;font-size:15px;line-height:1.7;opacity:.9"><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:12px;letter-spacing:.2em;color:#F47920;margin-bottom:10px">01 Basic</b>리듬 · 기본 스텝 · 자세 교정으로 초보도 쉽게 시작</li>
-        <li style="border:1px solid rgba(11,10,9,.14);padding:24px 22px;font-size:15px;line-height:1.7;opacity:.9"><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:12px;letter-spacing:.2em;color:#F47920;margin-bottom:10px">02 Routine</b>파트별 디테일 → 연결 → 완곡까지 목표에 맞춰 진행</li>
-        <li style="border:1px solid rgba(11,10,9,.14);padding:24px 22px;font-size:15px;line-height:1.7;opacity:.9"><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:12px;letter-spacing:.2em;color:#F47920;margin-bottom:10px">03 Stage</b>영상 촬영이나 무대 준비까지 확장</li>
-      </ul>
-      <div class="grid-3col" style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(11,10,9,.14);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-size:15px;line-height:1.8">
-        <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:6px">Tel</b><a href="tel:0507-1362-3897" class="dance-link">0507-1362-3897</a></div>
-        <div><b style="display: block; font-family: Archivo, Paperlogy, sans-serif; font-size: 11px; letter-spacing: 0.22em; color: rgb(244, 121, 32); margin-bottom: 6px;">Hours</b>평일 13:00–22:00<br>토 12:00–20:00 <br>일 휴무</div>
-        <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:6px">Booking</b><a href="https://map.naver.com/p/entry/place/1298275274" target="_blank" rel="noopener" class="dance-link">네이버 플레이스에서 예약 →</a></div>
-      </div>
-    </div>
+<section id="class" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px);background:#F4EFE8;color:#0B0A09">
+  <div data-reveal="1" class="grid-1-2" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
+    <div><div style="font-family:Inter;font-weight:800;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Class</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">Eight<br>Ways <span style="color:#F47920">In</span></h2></div>
+    <p style="font-size:20px;opacity:.7;max-width:560px;justify-self:end;align-self:end;font-weight:500;text-align:right">주 1회 60분, 1:1 레슨! <br>수준과 목표에 맞춰 커리큘럼을 함께 짭니다.</p>
   </div>
+  <div data-reveal="1" style="border-top:2px solid #0B0A09">
+    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2)"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">01</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em">Vocal</span><span class="class-desc" style="font-size:24px;opacity:.7">보컬 / 레코딩</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
+    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2)"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">02</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em">Piano</span><span class="class-desc" style="font-size:24px;opacity:.7">피아노 / 반주</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
+    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2)"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">03</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em">Guitar</span><span class="class-desc" style="font-size:24px;opacity:.7">통기타 / 일렉기타</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
+    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2)"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">04</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em">Bass</span><span class="class-desc" style="font-size:24px;opacity:.7">베이스</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
+    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2)"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">05</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em">Ukulele</span><span class="class-desc" style="font-size:24px;opacity:.7">우쿨렐레</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
+    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2)"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">06</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em">Compose</span><span class="class-desc" style="font-size:24px;opacity:.7">작곡 / 미디</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
+    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2)"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">07</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em">Drum</span><span class="class-desc" style="font-size:24px;opacity:.7">드럼</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
+    <a href="#pricing" class="class-item" style="display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2)"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:13px;letter-spacing:.2em">08</span><span class="class-name" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em">Rap</span><span class="class-desc" style="font-size:24px;opacity:.7">랩</span><span style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:28px">→</span></a>
+  </div>
+  <div data-reveal="1" style="margin-top:36px;display:flex;gap:40px;flex-wrap:wrap;font-size:14px;font-weight:600"><span class="class-feature">1:1 개인 레슨</span><span class="class-feature">주 1회 60분</span><span class="class-feature">고정 요일·시간</span><span class="class-feature">하루 전 연락 시 이동·보강</span></div>
 </section>
 
 <section id="contents" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px)">
   <div data-reveal="1" class="grid-1-2" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
-    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Contents</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">On<br>Sta<span style="color:#F47920">g</span>e</h2></div>
-    <p style="font-size: 20px; opacity: .85; max-width: 560px; justify-self: end; align-self: end; text-align: right">인생뮤직에서는 여러 공연들이 많아요. <br>언제 어디서든 깜짝 공연이 열릴 수 있으니 기대해도 좋습니다.</p>
+    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Community</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">On<br>Sta<span style="color:#F47920">g</span>e</h2></div>
+    <p style="font-size:20px;opacity:.85;max-width:560px;justify-self:end;align-self:end;text-align:right">인생뮤직에서는 여러 공연들이 많아요. <br>언제 어디서든 깜짝 공연이 열릴 수 있으니 기대해도 좋습니다.</p>
   </div>
-  <div data-reveal="1" class="grid-2col" style="display:grid;grid-template-columns:1.3fr 1fr;gap:10px;margin:0 calc(clamp(20px,3vw,48px) * -1)">
-    <div class="photo-container" style="aspect-ratio:16/10"><img src="images/openmic-01.jpg" alt="퇴근송 오픈마이크" loading="lazy"><div class="photo-overlay" style="background:radial-gradient(ellipse at 50% 40%,rgba(244,121,32,.5),transparent 55%),linear-gradient(180deg,rgba(29,25,22,.3),rgba(11,10,9,.2))"></div><span class="photo-caption">퇴근송 — Open Mic</span></div>
-    <div class="photo-container"><img src="images/openmic-02.jpg" alt="퇴근송 관객" loading="lazy"><div class="photo-overlay" style="background:linear-gradient(160deg,rgba(42,36,33,.3),rgba(11,10,9,.2))"></div><span class="photo-caption">Audience</span></div>
+  <div data-reveal="1" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:0 calc(clamp(20px,3vw,48px) * -1);padding:0 clamp(20px,3vw,48px) 12px">
+    <img src="uploads/L1000657.JPG" alt="퇴근송 1" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000635.JPG" alt="퇴근송 2" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000546.JPG" alt="퇴근송 3" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000558.JPG" alt="퇴근송 4" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000580.JPG" alt="퇴근송 5" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000615.JPG" alt="퇴근송 6" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000618.JPG" alt="퇴근송 7" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000625.JPG" alt="퇴근송 8" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000636.JPG" alt="퇴근송 9" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000638.JPG" alt="퇴근송 10" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000644.JPG" alt="퇴근송 11" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000653.JPG" alt="퇴근송 12" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000714.JPG" alt="퇴근송 13" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000718.JPG" alt="퇴근송 14" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/L1000719.JPG" alt="퇴근송 15" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260711_181357000_B191946C-D117-4ABC-99EA-E73F632FCA18.JPG" alt="퇴근송 16" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260711_201937000_3817B359-87ED-45D4-8DDE-1EAB52F13279.JPG" alt="퇴근송 17" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260711_202109000_D5C7C077-34FD-4142-A8DF-409E4DEBE7AA.JPG" alt="퇴근송 18" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260711_203707000_F92532B6-F820-456E-86D8-22E7051828B2.JPG" alt="퇴근송 19" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260711_203808000_24CBD845-40D7-4F53-9063-6DDEE57575B0.JPG" alt="퇴근송 20" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260711_204132000_E56D8D4E-459C-48BC-A4A4-43903F28BC43.JPG" alt="퇴근송 21" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260711_205404000_47EF883F-B3EC-44D2-BBFA-7FF92F4B253C.JPG" alt="퇴근송 22" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260711_205439000_B5CECEE9-361E-4973-A64A-489A951489D7.JPG" alt="퇴근송 23" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260613_214543325_038BA2B7-C982-4D59-9EAB-D53FE26D315D.JPG" alt="퇴근송 24" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260613_214557464_BB15385B-EC6B-4DAE-9925-FAB5F9061EA4.JPG" alt="퇴근송 25" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
   </div>
   <div class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:40px 0 0">
     <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,72px);letter-spacing:-.03em;line-height:.95">Open Mic<span style="font-family:'Paperlogy',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.04em;display:block">퇴근송</span></h3>
     <div data-reveal="1">
-      <p style="font-size: 20px; line-height: 1.75; opacity: .8; max-width: 520px; text-align: right">지친 마음을 달래줄 "퇴근송" 소공연. 무대에 서도 좋고, 응원만 해도 좋아요. 뮤친(인뮤 친구)들과 함께하는 한 달에 한 번의 작은 콘서트.</p>
-      <span style="display:inline-block;margin-top:22px;border:2px solid #F47920;color:#F47920;font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase;padding:10px 16px">매달 셋째 주 토요일 · PM 8:00</span>
-      <div style="display:flex;gap:28px;margin-top:22px;font-size:14px;font-weight:600"><a href="https://blog.naver.com/PostList.naver?blogId=inmuu_daejeon&amp;categoryNo=9" target="_blank" rel="noopener" class="openmic-link" style="border-bottom:1px solid #F47920;padding-bottom:2px">퇴근송 후기 보러가기 →</a></div>
+      <div style="max-width:520px;text-align:left;margin-bottom:22px;color:#F47920;font-family:'Archivo','Paperlogy',sans-serif;font-weight:800;font-size:24px;line-height:1.15;letter-spacing:-.01em">매달 셋째 주 토요일 오후 8시</div>
+      <p style="font-size:20px;line-height:1.75;opacity:.8;max-width:520px;text-align:left">지친 마음을 달래줄 "퇴근송" 소공연. 무대에 서도 좋고, 응원만 해도 좋아요. 뮤친(인뮤 친구)들과 함께하는 한 달에 한 번의 작은 콘서트.</p>
+      <div style="display:flex;gap:28px;margin-top:22px;font-size:14px;font-weight:600"><a href="https://blog.naver.com/PostList.naver?blogId=inmuu_daejeon&amp;categoryNo=9" target="_blank" rel="noopener" class="blog-link" style="border-bottom:1px solid #F47920;padding-bottom:2px;transition:color .3s ease">퇴근송 후기 보러가기 →</a></div>
     </div>
   </div>
   <div data-reveal="1" class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:80px calc(clamp(20px,3vw,48px) * -1) 0">
-    <div style="position:relative;overflow:hidden;background:#1a1714;aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/x18dbjZthpU" title="인생뮤직 대전점 라이브 영상 01" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
-    <div style="position:relative;overflow:hidden;background:#1a1714;aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/r0iZLg6NBMQ" title="인생뮤직 대전점 라이브 영상 02" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
+    <div style="position:relative;overflow:hidden;background:#1a1714;aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/x18dbjZthpU" title="인생뮤직 대전점 라이브 영상 01" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
+    <div style="position:relative;overflow:hidden;background:#1a1714;aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/r0iZLg6NBMQ" title="인생뮤직 대전점 라이브 영상 02" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
   </div>
   <div class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:40px 0 0">
     <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,72px);letter-spacing:-.03em;line-height:.95">Live <span style="color:#F47920">Clip</span><span style="font-family:'Paperlogy',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.04em;display:block">뮤친라이브</span></h3>
     <div data-reveal="1">
-      <p style="font-size: 20px; line-height: 1.75; opacity: .8; max-width: 520px; text-align: right">레코딩부터 라이브 영상 클립까지. 뮤친들의 찬란한 음악적 순간을 <br>인뮤가 정성스레 담아 나만의 라이브 클립으로 남겨드립니다.</p>
+      <p style="font-size:20px;line-height:1.75;opacity:.8;max-width:520px;text-align:left">레코딩부터 라이브 영상 클립까지! 뮤친들의 찬란한 음악적 순간을 <br>인뮤가 정성스레 담아 나만의 라이브 클립으로 남겨드립니다.</p>
     </div>
   </div>
-  <div data-reveal="1" class="grid-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:80px calc(clamp(20px,3vw,48px) * -1) 0">
-    <div class="photo-container" style="aspect-ratio:1"><img src="images/community-01.jpg" alt="시즌 파티" loading="lazy"><div class="photo-overlay" style="background:radial-gradient(ellipse at 30% 30%,rgba(244,121,32,.45),transparent 55%),linear-gradient(160deg,rgba(42,37,34,.3),rgba(11,10,9,.2))"></div><span class="photo-caption">Season Party</span></div>
-    <div class="photo-container" style="aspect-ratio:1"><img src="images/community-02.jpg" alt="보드게임" loading="lazy"><div class="photo-overlay" style="background:linear-gradient(160deg,rgba(38,33,30,.3),rgba(11,10,9,.2))"></div><span class="photo-caption">Board Game</span></div>
-    <div class="photo-container" style="aspect-ratio:1"><img src="images/community-03.jpg" alt="MT" loading="lazy"><div class="photo-overlay" style="background:radial-gradient(ellipse at 20% 80%,rgba(244,121,32,.35),transparent 55%),linear-gradient(160deg,rgba(31,27,24,.3),rgba(11,10,9,.2))"></div><span class="photo-caption">MT</span></div>
-    <div class="photo-container" style="aspect-ratio:1"><img src="images/community-04.jpg" alt="영화관람" loading="lazy"><div class="photo-overlay" style="background:linear-gradient(160deg,rgba(33,29,26,.3),rgba(11,10,9,.2))"></div><span class="photo-caption">Movie Night</span></div>
+  <div data-reveal="1" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:80px calc(clamp(20px,3vw,48px) * -1) 0;padding:0 clamp(20px,3vw,48px) 12px">
+    <img src="uploads/P20250527_163725000_EC6FFF3F-2848-45B5-9CC3-0C5E887019FB-2cc07c32.PNG" alt="인뮤니티 1" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20251118_221933000_196A8021-E114-4D04-A7A9-69886E713EFB-2001f5f0.PNG" alt="인뮤니티 2" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260211_185243000_A4433FA3-8B8A-4F21-A5AF-343059354E4C-8d97fff8.PNG" alt="인뮤니티 3" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260404_194213000_B7A43AFC-7138-41E3-9034-F98D11BEDE79-9a2553e4.PNG" alt="인뮤니티 4" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260424_222739033_ED1C6EE8-A2DE-41F6-B4A2-8E38888E4CBE-031a513e.JPG" alt="인뮤니티 5" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260526_185426480_91CB110D-E425-4D5C-8F76-76059C66E702-a1383adc.JPG" alt="인뮤니티 6" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260526_185448002_F1AFFC65-846C-490F-8FB5-D1DB99B97756-acadf85b.JPG" alt="인뮤니티 7" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260526_185541397_9EAD4A49-F975-4DDF-9D64-349D8BD13821-e18ba0f2.JPG" alt="인뮤니티 8" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260528_181454552_CEB11AC5-F286-499D-8C66-380731C8AEED-48b593c4.JPG" alt="인뮤니티 9" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260529_232706108_6D0355B3-A994-4CF0-9A0C-AC6DD9EDE6FE-12566610.JPG" alt="인뮤니티 10" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260529_233204756_A84EE202-A10A-4907-A248-C9E881509375-b3e9ea0f.JPG" alt="인뮤니티 11" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260604_210602557_61532CE2-9245-4D49-BBD8-2FF1EEC48B57-642f0ed9.JPG" alt="인뮤니티 12" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260629_220252461_4FCCED91-716C-4BCC-9913-60DF5F4B1E05.JPG" alt="인뮤니티 13" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260630_194139575_2399B846-DD1A-4ECE-B74A-5824ADCC6B01-51125849.JPG" alt="인뮤니티 14" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260630_195737290_E96FA29F-4934-46FD-8EAA-5E1E1946A7AD-c63c5e00.JPG" alt="인뮤니티 15" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260709_215601735_2E96C6EB-8928-483B-B40D-9D53B6B35DF5-868038af.JPG" alt="인뮤니티 16" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260710_213503405_7F5ABACD-80BB-4749-A8AD-C2CA8E71DABD-31379264.JPG" alt="인뮤니티 17" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260720_155132571_B83E2426-704C-4FA5-A3DB-D553AB99F6D4-379ca65d.JPG" alt="인뮤니티 18" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260811_210353645_B03B1BAC-025A-4ED7-937F-5A14B4A2C953-fac663cc.JPG" alt="인뮤니티 19" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260813_215351873_E91C6AA5-741E-4D7D-BD41-3C4578F358AC-a0d003a6.JPG" alt="인뮤니티 20" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260817_201542571_7AE1BE24-A615-4BC5-A07F-56E294EDE297-af5b9b7a.JPG" alt="인뮤니티 21" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260817_212022191_5CDA6BE5-DBF0-44CC-920F-3A9098C4FBE3-5a71ace6.JPG" alt="인뮤니티 22" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260824_215959010_2075920B-47FD-4C19-89EC-3FC518393BC5-4b258d07.JPG" alt="인뮤니티 23" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260830_200946826_1CC94079-1CAB-4766-91B7-95FDD9414474-49cd4645.JPG" alt="인뮤니티 24" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260830_215717244_F1E0E596-36E9-4795-A9A6-660A3E0EFC7F-2121ed3e.JPG" alt="인뮤니티 25" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
   </div>
   <div class="grid-2col" style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end">
     <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,72px);letter-spacing:-.03em;line-height:.95">Inmu<span style="color:#F47920">nity</span></h3>
     <div data-reveal="1">
-      <p style="font-size: 20px; line-height: 1.75; opacity: .8; max-width: 520px; text-align: right">인뮤 친구들과 함께하는 다채로운 일상까지. 음악으로 만난 사이, 음악 밖에서도 이어져요.</p>
+      <p style="font-size:20px;line-height:1.75;opacity:.8;max-width:520px;text-align:left">인뮤 친구들과 함께하는 다채로운 일상까지. <br>음악으로 만난 사이, 음악 밖에서도 이어져요.</p>
       <ul style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px"><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">시즌 파티</li><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">보드게임</li><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">MT</li><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">영화관람</li><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">애프터 파티</li></ul>
     </div>
   </div>
@@ -304,12 +330,12 @@ footer a:hover{color:#F47920}
 
 <section id="pricing" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px);background:#F4EFE8;color:#0B0A09">
   <div data-reveal="1" class="grid-1-2" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
-    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Pricing</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">INMUU<br><span style="color: rgb(244, 121, 32);">Class</span></h2></div>
-    <p style="font-size: 20px; opacity: .7; max-width: 560px; justify-self: end; align-self: end; text-align: right">모든 과목은 주 1회, 회당 60분 1:1 레슨<br>악기·악보·연습실은 전부 무료로 제공됩니다.<br>월 교습비 190,000원 (학원설립·운영등록 제5035호).</p>
+    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Pricing</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">INMUU<br><span style="color:#F47920">Class</span></h2></div>
+    <p style="font-size:20px;opacity:.7;max-width:560px;justify-self:end;align-self:end;text-align:right">모든 과목은 주 1회, 회당 60분 1:1 레슨<br>악기·악보·연습실은 전부 무료로 제공됩니다.<br>월 교습비 190,000원 (학원설립·운영등록 제5035호).</p>
   </div>
   <div data-reveal="1" style="display:inline-flex;border:2px solid #0B0A09;margin-bottom:36px" role="tablist">
-    <button id="tab-general" style="padding:12px 22px;background:#0B0A09;border:none;cursor:pointer;font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#F4EFE8">일반 레슨</button>
-    <button id="tab-vocalrec" style="padding:12px 22px;background:transparent;border:none;cursor:pointer;font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#0B0A09">보컬 레코딩</button>
+    <button id="tab-general" onclick="setPlan('general')" style="padding:12px 22px;background:#0B0A09;border:none;cursor:pointer;font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#F4EFE8">일반 레슨</button>
+    <button id="tab-vocalrec" onclick="setPlan('vocalrec')" style="padding:12px 22px;background:transparent;border:none;cursor:pointer;font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#0B0A09">보컬 레코딩</button>
   </div>
   <div data-reveal="1" style="border-top:2px solid #0B0A09">
     <div class="pricing-row" style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:24px;align-items:center;padding:34px 0;border-bottom:1px solid rgba(11,10,9,.25)">
@@ -319,7 +345,7 @@ footer a:hover{color:#F47920}
       <div style="font-size:14px;opacity:.85">가볍게 시작해 보고 싶은 분</div>
     </div>
     <div class="pricing-row-dark" style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:24px;align-items:center;padding:34px clamp(20px,3vw,48px);background:#0B0A09;color:#F4EFE8;margin:0 calc(clamp(20px,3vw,48px) * -1)">
-      <div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(26px,3.6vw,48px);letter-spacing:-.02em;line-height:1"><span style="font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.2em;background:#F47920;color:#0B0A09;padding:4px 8px;display:inline-block;margin-bottom:8px">Best</span><br>3 Month<small style="display:block;font-size:11px;letter-spacing:.2em;font-weight:700;margin-top:8px;opacity:.6">12 Sessions · 1 Hour</small></div>
+      <div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(26px,3.6vw,48px);letter-spacing:-.02em;line-height:1"><span style="font-size:11px;letter-spacing:.2em;background:#F47920;color:#0B0A09;padding:4px 8px;display:inline-block;margin-bottom:8px">Best</span><br>3 Month<small style="display:block;font-size:11px;letter-spacing:.2em;font-weight:700;margin-top:8px;opacity:.6">12 Sessions · 1 Hour</small></div>
       <div style="font-size:15px;opacity:.8"><b style="display:block;font-weight:700">12회</b>각 1회당 1시간</div>
       <div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.03em;line-height:1"><span data-p="general">510,000</span><span data-p="vocalrec" hidden>570,000</span><small style="font-family:'Paperlogy',sans-serif;font-size:15px;font-weight:700;margin-left:4px">원</small></div>
       <div style="font-size:14px;opacity:.85"><s data-p="general" style="opacity:.6;margin-right:8px">570,000원</s><s data-p="vocalrec" hidden style="opacity:.6;margin-right:8px">630,000원</s><b style="color:#F47920">60,000원 할인</b></div>
@@ -341,28 +367,28 @@ footer a:hover{color:#F47920}
   <div style="position:absolute;right:-10%;bottom:-20%;width:60vw;height:60vw;background:radial-gradient(circle,rgba(244,121,32,.28),transparent 60%);filter:blur(20px);pointer-events:none"></div>
   <div>
     <div data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Contact</div>
-    <h2 data-reveal="1" style="margin-top:20px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(56px,12vw,200px);line-height:.85;letter-spacing:-.045em;position:relative">See You<br>On <span style="color:#F47920">Stage</span></h2>
+    <h2 data-reveal="1" class="contact-h2" style="margin-top:20px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(56px,12vw,200px);line-height:.85;letter-spacing:-.045em;position:relative">See You<br>On <span style="color:#F47920">Stage</span></h2>
     <p data-reveal="1" style="font-size:clamp(18px,2vw,26px);font-weight:600;margin-top:30px;max-width:640px;letter-spacing:-.02em">인뮤, 음악과 함께 더 다채로운 일상으로 초대합니다.</p>
-    <div data-reveal="1" style="display:flex;gap:14px;flex-wrap:wrap"><a href="https://booking.naver.com/booking/13/bizes/939074" target="_blank" rel="noopener" class="cta-primary" style="display:inline-flex;align-items:center;gap:12px;background:#F47920;color:#0B0A09;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:.25s">체험 클래스 신청 →</a><a href="tel:0507-1346-3268" class="cta-secondary" style="display:inline-flex;align-items:center;gap:12px;background:none;color:#0B0A09;border:2px solid #0B0A09;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:.25s">전화 상담 0507-1346-3268</a></div>
+    <div data-reveal="1" style="display:flex;gap:14px;flex-wrap:wrap"><a href="https://booking.naver.com/booking/13/bizes/939074" target="_blank" rel="noopener" class="cta-primary" style="display:inline-flex;align-items:center;gap:12px;background:#F47920;color:#0B0A09;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:background .3s ease,color .3s ease">체험 클래스 신청 →</a><a href="tel:0507-1346-3268" class="cta-secondary" style="display:inline-flex;align-items:center;gap:12px;background:none;color:#0B0A09;border:2px solid #0B0A09;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:border-color .3s ease,color .3s ease">전화 상담 0507-1346-3268</a></div>
   </div>
   <div data-reveal="1" class="grid-5col" style="display:grid;grid-template-columns:repeat(5,1fr);gap:30px;margin-top:80px;padding-top:28px;border-top:1px solid rgba(11,10,9,.14);font-size:15px;line-height:1.8;position:relative">
-    <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Address</b>대전 서구 둔산로31번길 72<br>501호 (5층)<br><a href="https://map.naver.com/p/search/%EC%9D%B8%EC%83%9D%EB%AE%A4%EC%A7%81%ED%95%99%EC%9B%90%20%EB%8C%80%EC%A0%84" target="_blank" rel="noopener" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px">네이버 지도 →</a></div>
-    <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Tel</b><a href="tel:0507-1346-3268" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px">0507-1346-3268</a><br><span style="opacity:.6">인생댄스 Studio</span><br><a href="tel:0507-1362-3897" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px">0507-1362-3897</a></div>
+    <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Address</b>대전 서구 둔산로31번길 72<br>501호 (5층)<br><a href="https://map.naver.com/p/search/%EC%9D%B8%EC%83%9D%EB%AE%A4%EC%A7%81%ED%95%99%EC%9B%90%20%EB%8C%80%EC%A0%84" target="_blank" rel="noopener" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:color .3s ease">네이버 지도 →</a></div>
+    <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Tel</b><a href="tel:0507-1346-3268" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:color .3s ease">0507-1346-3268</a><br><span style="opacity:.6">인생댄스 Studio</span><br><a href="tel:0507-1362-3897" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:color .3s ease">0507-1362-3897</a></div>
     <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Hours</b>평일 13:00–22:00<br>토 11:00–19:00 · 일 휴무</div>
-    <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Social</b><a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px">Instagram</a><br><a href="https://blog.naver.com/inmuu_daejeon" target="_blank" rel="noopener" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px">Naver Blog</a><br><a href="https://www.youtube.com/@in_muu_official" target="_blank" rel="noopener" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px">YouTube (INMUU)</a></div>
+    <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Social</b><a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:color .3s ease">Instagram</a><br><a href="https://blog.naver.com/inmuu_daejeon" target="_blank" rel="noopener" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:color .3s ease">Naver Blog</a><br><a href="https://www.youtube.com/@in_muu_official" target="_blank" rel="noopener" class="contact-link" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:color .3s ease">YouTube (INMUU)</a></div>
     <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Registration</b>학원설립·운영등록번호<br>제5035호<br>월 교습비 190,000원</div>
   </div>
 </section>
 
 <footer style="background:#C9BFAE;color:#0B0A09;padding:60px clamp(20px,3vw,48px) 80px;font-family:'Archivo','Paperlogy',sans-serif;text-transform:uppercase;font-size:13px;letter-spacing:.04em;font-weight:500">
-  <div class="grid-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+  <div class="footer-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
     <div style="display:flex;gap:40px;flex-wrap:wrap">
       <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://blog.naver.com/inmuu_daejeon" target="_blank" rel="noopener">Blog</a>
       <a href="https://booking.naver.com/booking/13/bizes/939074" target="_blank" rel="noopener">Naver Booking</a>
       <a href="https://inmuunity.com/" target="_blank" rel="noopener">INMUU HQ</a>
     </div>
-    <div style="line-height:1.8;text-align:right">
+    <div class="footer-right" style="line-height:1.8;text-align:right">
       &copy; INMUU Daejeon. All rights reserved.<br>
       501, 72 Dunsan-ro 31beon-gil, Seo-gu, Daejeon, Republic of Korea<br>
       Tel 0507-1346-3268 · <span style="font-family:'Paperlogy',sans-serif;text-transform:none">학원설립·운영등록번호 제5035호</span><br>
@@ -373,7 +399,43 @@ footer a:hover{color:#F47920}
 
 <script>
 (function(){
-  // Spirograph SVG generation
+  var menuOpen = false;
+
+  window.toggleMenu = function() { setOpen(!menuOpen); };
+  window.closeMenu = function() { setOpen(false); };
+
+  function setOpen(open) {
+    menuOpen = open;
+    var ov = document.getElementById('ovl'),
+        hd = document.getElementById('hdr'),
+        mk = document.getElementById('logomark'),
+        b1 = document.getElementById('bar1'),
+        b2 = document.getElementById('bar2'),
+        b3 = document.getElementById('bar3'),
+        btn = document.getElementById('menuBtn');
+    if (!ov) return;
+    ov.style.clipPath = open ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)';
+    hd.style.mixBlendMode = open ? 'normal' : 'difference';
+    hd.style.color = open ? '#0B0A09' : '#F4EFE8';
+    mk.style.background = open ? '#0B0A09' : '#F4EFE8';
+    mk.style.color = open ? '#F47920' : '#0B0A09';
+    btn.style.color = '#0B0A09';
+    b1.style.transform = open ? 'translate(-50%,-50%) rotate(45deg)' : 'translate(-50%,-50%)';
+    b2.style.transform = open ? 'translate(-50%,-50%) rotate(-45deg)' : 'translate(-50%,calc(-50% - 8px))';
+    if (b3) b3.style.opacity = open ? '0' : '1';
+  }
+
+  window.setPlan = function(p) {
+    document.querySelectorAll('[data-p]').forEach(function(el) { el.hidden = el.dataset.p !== p; });
+    ['general', 'vocalrec'].forEach(function(name) {
+      var t = document.getElementById('tab-' + name);
+      if (!t) return;
+      var on = name === p;
+      t.style.background = on ? '#0B0A09' : 'transparent';
+      t.style.color = on ? '#F4EFE8' : '#0B0A09';
+    });
+  };
+
   var s = document.getElementById('spiro');
   if (s) {
     var h = '';
@@ -381,61 +443,16 @@ footer a:hover{color:#F47920}
     s.innerHTML = h;
   }
 
-  // Menu toggle
-  var menuOpen = false;
-  var menuBtn = document.getElementById('menuBtn');
-  function setOpen(open) {
-    menuOpen = open;
-    var ov = document.getElementById('ovl');
-    var hd = document.getElementById('hdr');
-    var mk = document.getElementById('logomark');
-    var b1 = document.getElementById('bar1');
-    var b2 = document.getElementById('bar2');
-    if (!ov) return;
-    ov.style.clipPath = open ? 'inset(0 0 0 0)' : 'inset(0 0 100% 0)';
-    hd.style.mixBlendMode = open ? 'normal' : 'difference';
-    hd.style.color = open ? '#0B0A09' : '#F4EFE8';
-    mk.style.background = open ? '#0B0A09' : '#F4EFE8';
-    mk.style.color = open ? '#F47920' : '#0B0A09';
-    menuBtn.style.color = open ? '#0B0A09' : '#F4EFE8';
-    b1.style.transform = open ? 'translate(-50%,-50%) rotate(45deg)' : 'translate(-50%,-50%)';
-    b2.style.transform = open ? 'translate(-50%,-50%) rotate(-45deg)' : 'translate(-50%,-50%) rotate(90deg)';
-  }
-  menuBtn.addEventListener('click', function(){ setOpen(!menuOpen); });
-
-  // Nav links close menu
-  var navLinks = document.querySelectorAll('#ovl nav a');
-  navLinks.forEach(function(link){
-    link.addEventListener('click', function(){ setOpen(false); });
-  });
-
-  // Pricing tab switching
-  function setPlan(p) {
-    document.querySelectorAll('[data-p]').forEach(function(el){
-      el.hidden = el.dataset.p !== p;
-    });
-    ['general', 'vocalrec'].forEach(function(name){
-      var t = document.getElementById('tab-' + name);
-      if (!t) return;
-      var on = name === p;
-      t.style.background = on ? '#0B0A09' : 'transparent';
-      t.style.color = on ? '#F4EFE8' : '#0B0A09';
-    });
-  }
-  document.getElementById('tab-general').addEventListener('click', function(){ setPlan('general'); });
-  document.getElementById('tab-vocalrec').addEventListener('click', function(){ setPlan('vocalrec'); });
-
-  // Scroll reveal with IntersectionObserver
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){
+  var io = new IntersectionObserver(function(es) {
+    es.forEach(function(e) {
       if (e.isIntersecting) {
         e.target.style.opacity = '1';
         e.target.style.transform = 'none';
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('[data-reveal]').forEach(function(el){
+  }, { threshold: .1 });
+  document.querySelectorAll('[data-reveal]').forEach(function(el) {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)';
