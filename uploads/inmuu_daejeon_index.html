@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>인생뮤직 대전점 | INMUU DAEJEON</title>
+<meta name="description" content="대전 둔산동 성인 취미 음악학원 인생뮤직 대전점. 세종·청주·계룡에서도 가까운 대전 대표 성인 음악학원. 보컬·피아노·기타·베이스·우쿨렐레·작곡·드럼·랩 1:1 레슨, 무제한 연습실, 매달 퇴근송 오픈마이크, 인생댄스 Studio.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Archivo+Narrow:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#F47920;
+  --black:#0B0A09;
+  --ink:#161412;
+  --paper:#F4EFE8;
+  --mute:#8C847B;
+  --line:rgba(244,239,232,.14);
+  --font:"Pretendard Variable",Pretendard,-apple-system,system-ui,sans-serif;
+  --display:"Archivo","Pretendard Variable",Pretendard,sans-serif;
+  --gutter:clamp(20px,3vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--black);color:var(--paper);line-height:1.5;letter-spacing:-.01em;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{display:block;max-width:100%}
+::selection{background:var(--orange);color:var(--black)}
+
+/* grain overlay */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.06;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+.wrap{padding:0 var(--gutter)}
+.upper{text-transform:uppercase}
+.display{font-family:var(--display);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:.95}
+.label{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--orange)}
+
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:60;display:flex;justify-content:space-between;align-items:flex-start;padding:22px var(--gutter);mix-blend-mode:difference}
+body.open header{mix-blend-mode:normal;color:var(--black)}
+body.open .logo .mark{background:var(--black);color:var(--orange)}
+body.open .menu-btn{color:var(--black)}
+.logo{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:900;font-size:15px;letter-spacing:.12em;text-transform:uppercase}
+.logo .mark{background:var(--paper);color:var(--black);padding:4px 10px 3px;transform:rotate(-1.5deg);display:inline-block}
+.logo .sl{font-weight:500;opacity:.7;letter-spacing:.02em}
+.menu-btn{width:44px;height:44px;border:none;background:none;color:var(--paper);cursor:pointer;position:relative}
+.menu-btn::before,.menu-btn::after{content:"";position:absolute;left:50%;top:50%;width:26px;height:3px;background:currentColor;transform:translate(-50%,-50%);transition:.35s}
+.menu-btn::after{transform:translate(-50%,-50%) rotate(90deg)}
+body.open .menu-btn::before{transform:translate(-50%,-50%) rotate(45deg)}
+body.open .menu-btn::after{transform:translate(-50%,-50%) rotate(-45deg)}
+
+/* overlay menu */
+.overlay{position:fixed;inset:0;background:var(--orange);color:var(--black);z-index:55;display:grid;grid-template-columns:1fr 1fr;align-items:start;padding:90px var(--gutter) 40px;gap:40px;clip-path:inset(0 0 100% 0);transition:clip-path .6s cubic-bezier(.77,0,.18,1);overflow:hidden}
+body.open .overlay{clip-path:inset(0 0 0 0)}
+.overlay .spiro{position:absolute;left:50%;top:50%;width:min(90vh,90vw);height:min(90vh,90vw);transform:translate(-50%,-50%);opacity:.55;pointer-events:none;animation:spin 120s linear infinite}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.overlay nav{grid-column:2;position:relative;z-index:1}
+.overlay nav a{display:block;font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(34px,4.6vw,64px);line-height:1;letter-spacing:-.02em;transition:.25s}
+.overlay nav a:hover{font-weight:900;padding-left:.2em}
+.overlay nav a small{font-family:var(--font);font-weight:600;font-size:13px;letter-spacing:.02em;text-transform:none;vertical-align:top;margin-left:12px;opacity:.6}
+.overlay .side{position:absolute;left:var(--gutter);bottom:40px;font-size:14px;font-weight:600;line-height:1.9;opacity:.85;z-index:1}
+.overlay .side b{display:block;font-family:var(--display);letter-spacing:.2em;font-size:11px;margin-bottom:6px}
+.overlay .side a:hover{text-decoration:underline}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px var(--gutter) 0;position:relative}
+.hero .tag{font-family:var(--display);font-weight:700;font-size:clamp(15px,1.5vw,20px);letter-spacing:.02em;text-transform:uppercase;line-height:1.45;max-width:1100px}
+.hero .tag em{font-style:normal;color:var(--orange)}
+.hero h1{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(64px,13vw,220px);line-height:.85;letter-spacing:-.04em;margin:28px 0 0 -0.04em}
+.hero h1 span{display:block}
+.hero h1 .o{color:var(--orange)}
+.hero-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:36px calc(var(--gutter) * -1) 0}
+.ph{position:relative;overflow:hidden;background:#1a1714}
+.ph img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(.85)}
+.ph .fill{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(244,121,32,.45),transparent 55%),linear-gradient(160deg,#2a2522,#0b0a09)}
+.ph .cap{position:absolute;left:18px;bottom:16px;font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);opacity:.8}
+.hero-photos .ph{aspect-ratio:4/3}
+.hero .spot{position:absolute;left:50%;top:-10%;width:60vw;height:60vw;max-width:900px;max-height:900px;transform:translateX(-50%);background:radial-gradient(circle,rgba(244,121,32,.22),transparent 60%);pointer-events:none;filter:blur(10px)}
+
+/* ticker */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:16px 0;background:var(--black)}
+.ticker div{display:inline-block;animation:tk 40s linear infinite;font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);letter-spacing:-.02em;line-height:1}
+.ticker span{margin:0 .5em}
+.ticker span::after{content:"+";color:var(--orange);margin-left:1em}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* section base */
+section{padding:clamp(90px,12vw,180px) var(--gutter)}
+.head{display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.head h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em}
+.head h2 .o{color:var(--orange)}
+.head p{font-size:clamp(16px,1.3vw,20px);color:var(--paper);opacity:.85;max-width:560px;justify-self:end;align-self:end}
+.head .kr{font-family:var(--font);font-weight:800;letter-spacing:-.03em;text-transform:none}
+
+/* about */
+.about{border-top:1px solid var(--line)}
+.about .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.about .big{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,6vw,92px);line-height:.95;letter-spacing:-.03em}
+.about .big i{font-style:normal;color:var(--orange)}
+.about p{font-size:18px;line-height:1.75;opacity:.85;max-width:520px}
+.about .poem{font-size:clamp(17px,1.5vw,21px);line-height:1.9;opacity:.92;margin-top:40px;max-width:none}
+.about .poem.en{font-family:var(--display);font-weight:500;opacity:.6;letter-spacing:0}
+.stamp-wrap{display:flex;justify-content:flex-end;align-items:center;padding-top:60px}
+.stamp{display:inline-flex;flex-direction:column;gap:6px}
+.stamp span{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(28px,3.6vw,52px);letter-spacing:.02em;line-height:1;background:var(--orange);color:var(--black);padding:8px 16px 6px;align-self:flex-start}
+.stamp span:nth-child(1){transform:rotate(-2deg)}
+.stamp span:nth-child(2){transform:rotate(1.2deg) translateX(12px)}
+.stamp span:nth-child(3){transform:rotate(-1deg) translateX(4px)}
+.stamp span:nth-child(4){transform:rotate(1.6deg) translateX(18px)}
+
+/* class list */
+.classes{background:var(--paper);color:var(--black)}
+.classes .label{color:var(--orange)}
+.classes .head p{color:var(--black);opacity:.7}
+.class-list{border-top:2px solid var(--black)}
+.class-item{display:grid;grid-template-columns:70px 1fr 1fr auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid rgba(11,10,9,.2);transition:.3s;position:relative}
+.class-item:hover{padding-left:16px}
+.class-item:hover .en{color:var(--orange)}
+.class-item .n{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.2em}
+.class-item .en{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,56px);line-height:1;letter-spacing:-.02em;transition:.3s}
+.class-item .kr{font-size:15px;opacity:.7}
+.class-item .arr{font-family:var(--display);font-weight:900;font-size:28px}
+.classes .note{margin-top:36px;display:flex;gap:40px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.classes .note span::before{content:"+";color:var(--orange);font-weight:900;margin-right:8px}
+
+/* place */
+.place .row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 calc(var(--gutter) * -1)}
+.place .row .ph{aspect-ratio:4/3}
+.place .row.alt{grid-template-columns:2fr 1fr}
+.place .txt{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:36px 0 60px}
+.place .txt h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(28px,3.4vw,48px);letter-spacing:-.02em;line-height:1}
+.place .txt h3 span{color:var(--orange);margin-right:14px}
+.place .txt p{font-size:17px;opacity:.8;max-width:520px;line-height:1.75}
+
+/* practice */
+.practice{background:var(--orange);color:var(--black)}
+.practice .label{color:var(--black)}
+.practice .head p{color:var(--black);opacity:.75}
+.practice .stmt{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(44px,9vw,150px);line-height:.85;letter-spacing:-.04em}
+.practice ul{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:60px;border-top:2px solid var(--black)}
+.practice li{padding:28px 24px 28px 0;border-bottom:2px solid var(--black);font-weight:700;font-size:18px}
+.practice li+li{border-left:2px solid var(--black);padding-left:24px}
+.practice li b{display:block;font-family:var(--display);font-size:12px;letter-spacing:.2em;margin-bottom:10px;opacity:.7}
+
+/* dance */
+.dance{border-top:1px solid var(--line)}
+.dance .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.dance .big{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,96px);line-height:.9;letter-spacing:-.03em}
+.dance .big .o{color:var(--orange)}
+.dance .big .kr{font-family:var(--font);font-weight:800;text-transform:none;letter-spacing:-.04em;display:block;font-size:clamp(22px,2.8vw,40px);margin-top:14px}
+.dance p{font-size:18px;line-height:1.8;opacity:.85;max-width:520px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:40px}
+.steps li{border:1px solid var(--line);padding:24px 22px;font-size:15px;line-height:1.7;opacity:.9}
+.steps li b{display:block;font-family:var(--display);font-size:12px;letter-spacing:.2em;color:var(--orange);margin-bottom:10px}
+.dance .meta{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-size:15px;line-height:1.8}
+.dance .meta b{display:block;font-family:var(--display);font-size:11px;letter-spacing:.22em;color:var(--orange);margin-bottom:6px}
+.dance .meta a:hover{color:var(--orange)}
+
+/* contents */
+.contents .feature{display:grid;grid-template-columns:1.3fr 1fr;gap:10px;margin:0 calc(var(--gutter) * -1)}
+.contents .feature .ph{aspect-ratio:16/10}
+.contents .feature .ph.tall{aspect-ratio:auto}
+.contents .info{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:40px 0 0}
+.contents h3{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,72px);letter-spacing:-.03em;line-height:.95}
+.contents h3 .kr{font-family:var(--font);font-weight:800;text-transform:none;letter-spacing:-.04em;display:block}
+.contents h3 .o{color:var(--orange)}
+.contents p{font-size:17px;line-height:1.75;opacity:.8;max-width:520px}
+.contents .links{display:flex;gap:28px;margin-top:22px;font-size:14px;font-weight:600}
+.contents .links a{border-bottom:1px solid var(--orange);padding-bottom:2px}
+.contents .links a:hover{color:var(--orange)}
+.videos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:80px calc(var(--gutter) * -1) 0}
+.videos .ph{aspect-ratio:16/9}
+.videos iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.contents .when{display:inline-block;margin-top:22px;border:2px solid var(--orange);color:var(--orange);font-family:var(--display);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase;padding:10px 16px}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:80px calc(var(--gutter) * -1) 0}
+.strip .ph{aspect-ratio:1}
+.inmunity{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.inmunity ul{display:flex;flex-wrap:wrap;gap:10px}
+.inmunity li{border:1px solid var(--line);padding:10px 16px;font-size:14px;font-weight:600}
+
+/* pricing */
+.pricing{background:var(--paper);color:var(--black)}
+.pricing .head p{color:var(--black);opacity:.7}
+.tabs{display:inline-flex;border:2px solid var(--black);margin-bottom:36px}
+.tab{padding:12px 22px;background:none;border:none;cursor:pointer;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--black)}
+.tab.active{background:var(--black);color:var(--paper)}
+.plan-table{border-top:2px solid var(--black)}
+.plan{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:24px;align-items:center;padding:34px 0;border-bottom:1px solid rgba(11,10,9,.25)}
+.plan.best{background:var(--black);color:var(--paper);margin:0 calc(var(--gutter) * -1);padding-left:var(--gutter);padding-right:var(--gutter);border-bottom:none}
+.plan .nm{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(26px,3.6vw,48px);letter-spacing:-.02em;line-height:1}
+.plan .nm small{display:block;font-size:11px;letter-spacing:.2em;font-weight:700;margin-top:8px;opacity:.6}
+.plan .cnt{font-size:15px;opacity:.8}
+.plan .cnt b{display:block;font-weight:700}
+.plan .prc{font-family:var(--display);font-weight:900;font-size:clamp(28px,3.4vw,44px);letter-spacing:-.03em;line-height:1}
+.plan .prc small{font-family:var(--font);font-size:15px;font-weight:700;margin-left:4px}
+.plan .dc{font-size:14px;opacity:.85}
+.plan .dc s{opacity:.6;margin-right:8px}
+.plan .dc b{color:var(--orange)}
+.plan .best-tag{font-family:var(--display);font-size:11px;letter-spacing:.2em;background:var(--orange);color:var(--black);padding:4px 8px;display:inline-block;margin-bottom:8px}
+.pricing .foot{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:40px;font-size:14px;line-height:1.8;opacity:.8}
+.pricing .foot b{display:block;font-family:var(--display);letter-spacing:.2em;font-size:11px;color:var(--orange);margin-bottom:6px}
+
+/* contact */
+.contact{min-height:90svh;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.contact .spot{position:absolute;right:-10%;bottom:-20%;width:60vw;height:60vw;background:radial-gradient(circle,rgba(244,121,32,.28),transparent 60%);filter:blur(20px);pointer-events:none}
+.contact h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(56px,12vw,200px);line-height:.85;letter-spacing:-.045em;position:relative}
+.contact h2 .o{color:var(--orange)}
+.contact .kr{font-size:clamp(18px,2vw,26px);font-weight:600;margin-top:30px;max-width:640px;letter-spacing:-.02em}
+.contact .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:30px;margin-top:80px;padding-top:28px;border-top:1px solid var(--line);font-size:15px;line-height:1.8;position:relative}
+.contact .grid b{display:block;font-family:var(--display);font-size:11px;letter-spacing:.22em;color:var(--orange);margin-bottom:8px}
+.contact .grid a:hover{color:var(--orange)}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--orange);color:var(--black);font-family:var(--display);font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:.25s}
+.btn:hover{background:var(--paper)}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn.ghost{background:none;color:var(--paper);border:2px solid var(--paper)}
+.btn.ghost:hover{border-color:var(--orange);color:var(--orange);background:none}
+
+footer{background:#C9BFAE;color:var(--black);padding:60px var(--gutter) 80px;font-family:var(--display);text-transform:uppercase;font-size:13px;letter-spacing:.04em;font-weight:500}
+.f-top{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.f-links{display:flex;gap:40px;flex-wrap:wrap}
+.f-links a:hover{color:var(--orange)}
+.f-info{line-height:1.8;text-align:right}
+@media (max-width:900px){.f-top{grid-template-columns:1fr}.f-info{text-align:left}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:900px){
+  .hero-photos,.about .grid,.head,.place .txt,.contents .feature,.contents .info,.inmunity,.pricing .foot{grid-template-columns:1fr}
+  .place .row,.place .row.alt{grid-template-columns:1fr}
+  .strip,.videos{grid-template-columns:1fr 1fr}.dance .grid,.steps,.dance .meta{grid-template-columns:1fr}
+  .class-item{grid-template-columns:50px 1fr auto}
+  .class-item .kr{grid-column:2;font-size:13px}
+  .practice ul{grid-template-columns:1fr}
+  .practice li+li{border-left:none;padding-left:0}
+  .plan{grid-template-columns:1fr 1fr}
+  .contact .grid{grid-template-columns:1fr 1fr}
+  .overlay{grid-template-columns:1fr}
+  .overlay .side{text-align:left}
+  .head p{justify-self:start}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#top" class="logo"><span class="mark">INMUU</span><span class="sl">Daejeon</span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="메뉴 열기"></button>
+</header>
+
+<div class="overlay" id="overlay">
+  <svg class="spiro" viewBox="0 0 400 400" fill="none" stroke="#0B0A09" stroke-width=".6" id="spiro"></svg>
+  <nav>
+    <a href="#about">About<small>소개</small></a>
+    <a href="#class">Class<small>과목</small></a>
+    <a href="#place">Place<small>공간</small></a>
+    <a href="#dance">Dance<small>인생댄스</small></a>
+    <a href="#contents">Contents<small>콘텐츠</small></a>
+    <a href="#pricing">Pricing<small>수강료</small></a>
+    <a href="#contact">Contact<small>상담 문의</small></a>
+  </nav>
+  <div class="side">
+    <b>INMUU DAEJEON</b>
+    대전 서구 둔산로31번길 72, 501호<br>
+    <a href="tel:0507-1346-3268">0507-1346-3268</a><br>
+    평일 13–22 · 토 11–19 · 일 휴무<br>
+    학원설립·운영등록번호 제5035호<br>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener">@in_muu_daejeon</a><br>
+    <a href="https://blog.naver.com/inmuu_daejeon" target="_blank" rel="noopener">blog.naver.com/inmuu_daejeon</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="spot"></div>
+  <p class="tag">Vocal, Piano, Guitar, Bass, Ukulele, Compose, Drum, Rap<br><em>평범한 일상에 음악을 더하다 +</em> — Daejeon, Dunsan-dong</p>
+  <p class="tag" style="font-family:var(--font);text-transform:none;font-weight:600;opacity:.8;margin-top:10px">세종 · 청주 · 계룡에서도 방문하기 편한 대전 대표 성인 전문 음악학원</p>
+  <h1><span>Add</span><span>Music <span class="o">+</span></span><span>To Your</span><span>Ordinary</span></h1>
+  <div class="hero-photos">
+    <div class="ph"><div class="fill"></div><span class="cap">01 — Open Mic, 퇴근송</span></div>
+    <div class="ph"><div class="fill" style="background:radial-gradient(ellipse at 70% 60%,rgba(244,121,32,.35),transparent 55%),linear-gradient(200deg,#221e1b,#0b0a09)"></div><span class="cap">02 — Lesson Studio</span></div>
+  </div>
+</section>
+
+<div class="ticker"><div>
+  <span>Vocal</span><span>Piano</span><span>Guitar</span><span>Bass</span><span>Ukulele</span><span>Compose</span><span>Drum</span><span>Rap</span>
+  <span>Vocal</span><span>Piano</span><span>Guitar</span><span>Bass</span><span>Ukulele</span><span>Compose</span><span>Drum</span><span>Rap</span>
+</div></div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="grid">
+    <div class="reveal">
+      <div class="label">About Us</div>
+      <p class="poem">음악도 즐거움도 포기할 수 없는 사람들을 위해.<br>
+      인생뮤직 대전점은 성인 취미 전문 실용음악학원입니다.<br>
+      레슨은 1:1로, 연습은 무제한으로.<br>
+      한 달에 한 번, 라운지의 조명이 꺼지면 무대가 켜집니다.<br>
+      악기를 처음 잡는 사람도, 오래 쉬었던 사람도<br>
+      여기서는 같은 무대에 섭니다.<br>
+      인생뮤직은 이 모든 것을<br>
+      '평범한 일상에 음악을 더하다'라고 말합니다.</p>
+      <p class="poem en">We remember the first note you play on stage.<br>
+      INMUU Daejeon stands for that moment.<br>
+      Music + together + happy + youth.</p>
+    </div>
+    <div class="reveal stamp-wrap">
+      <div class="stamp"><span>Music</span><span>+ Together</span><span>+ Happy</span><span>+ Youth</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASS -->
+<section class="classes" id="class">
+  <div class="head reveal">
+    <div><div class="label">Class</div><h2 style="margin-top:14px">Eight<br>Ways <span class="o">In</span></h2></div>
+    <p>주 1회 60분 1:1 레슨. 처음 시작하는 분부터 오래 쉬었던 분까지, 수준과 목표에 맞춰 커리큘럼을 함께 짭니다.</p>
+  </div>
+  <div class="class-list reveal">
+    <a class="class-item" href="#pricing"><span class="n">01</span><span class="en">Vocal</span><span class="kr">보컬 · 보컬 레코딩</span><span class="arr">→</span></a>
+    <a class="class-item" href="#pricing"><span class="n">02</span><span class="en">Piano</span><span class="kr">피아노 · 반주</span><span class="arr">→</span></a>
+    <a class="class-item" href="#pricing"><span class="n">03</span><span class="en">Guitar</span><span class="kr">통기타 · 일렉기타</span><span class="arr">→</span></a>
+    <a class="class-item" href="#pricing"><span class="n">04</span><span class="en">Bass</span><span class="kr">베이스</span><span class="arr">→</span></a>
+    <a class="class-item" href="#pricing"><span class="n">05</span><span class="en">Ukulele</span><span class="kr">우쿨렐레</span><span class="arr">→</span></a>
+    <a class="class-item" href="#pricing"><span class="n">06</span><span class="en">Compose</span><span class="kr">작곡 · 미디</span><span class="arr">→</span></a>
+    <a class="class-item" href="#pricing"><span class="n">07</span><span class="en">Drum</span><span class="kr">드럼</span><span class="arr">→</span></a>
+    <a class="class-item" href="#pricing"><span class="n">08</span><span class="en">Rap</span><span class="kr">랩</span><span class="arr">→</span></a>
+  </div>
+  <div class="note reveal"><span>1:1 개인 레슨</span><span>주 1회 60분</span><span>고정 요일·시간</span><span>하루 전 연락 시 이동·보강</span></div>
+</section>
+
+<!-- PLACE -->
+<section class="place" id="place">
+  <div class="head reveal">
+    <div><div class="label">Our Place</div><h2 style="margin-top:14px">Where<br>We <span class="o">Play</span></h2></div>
+    <p>둔산동 한복판, 5층 501호. 이야기를 나누는 라운지와, 레슨과 연습이 이루어지는 스튜디오.</p>
+  </div>
+  <div class="row reveal">
+    <div class="ph"><div class="fill"></div><span class="cap">Lounge — 01</span></div>
+    <div class="ph"><div class="fill" style="background:linear-gradient(160deg,#2b2623,#0b0a09)"></div><span class="cap">Lounge — 02</span></div>
+  </div>
+  <div class="txt reveal">
+    <h3><span>①</span>Lounge</h3>
+    <p>라운지에서는 이야기를 나누고, 공연도 하고, 영화도 보고, 쉴 수도 있어요. 레슨 전후로 편하게 머무는 인뮤의 거실이자, 한 달에 한 번은 무대가 됩니다.</p>
+  </div>
+  <div class="row alt reveal">
+    <div class="ph"><div class="fill" style="background:radial-gradient(ellipse at 80% 20%,rgba(244,121,32,.3),transparent 50%),linear-gradient(200deg,#24201d,#0b0a09)"></div><span class="cap">Lesson Studio — 01</span></div>
+    <div class="ph"><div class="fill" style="background:linear-gradient(160deg,#1f1b18,#0b0a09)"></div><span class="cap">Lesson Studio — 02</span></div>
+  </div>
+  <div class="txt reveal">
+    <h3><span>②</span>Lesson Studio</h3>
+    <p>레슨과 연습은 여기서 이루어져요. 업라이트 피아노룸, 마스터 키보드와 모니터 스피커가 있는 작곡룸, 보컬 레코딩룸, 기타·베이스룸까지 과목별 스튜디오.</p>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="practice">
+  <div class="label reveal">Practice</div>
+  <p class="stmt reveal" style="margin-top:20px">Practice<br>Anytime.<br>No Limits.</p>
+  <ul class="reveal">
+    <li><b>Practice Room</b>레슨 이외의 시간, 빈 연습실에서 얼마든지 연습 가능</li>
+    <li><b>Instruments</b>피아노 · 기타 · 베이스 · 우쿨렐레 — 모든 악기는 여러분을 위한 것, 대여 무료</li>
+    <li><b>Sheet Music</b>연습에 필요한 악보는 무제한 출력</li>
+  </ul>
+</section>
+
+<!-- DANCE -->
+<section class="dance" id="dance">
+  <div class="grid">
+    <div class="reveal">
+      <div class="label">Life Dance Studio</div>
+      <h2 class="big" style="margin-top:14px">Move<br>Your <span class="o">Body</span><span class="kr">인생댄스 Studio 대전점</span></h2>
+    </div>
+    <div class="reveal">
+      <p>보컬/악기와는 또 다른 즐거움, K-POP 취미댄스를 인생댄스 Studio에서 시작해보세요. 퇴근 후 1시간, 나로써 빛나는 순간. 인생뮤직학원 대전점과 같은 자리에서 운영됩니다.</p>
+      <ul class="steps">
+        <li><b>01 Basic</b>리듬 · 기본 스텝 · 자세 교정으로 초보도 쉽게 시작</li>
+        <li><b>02 Routine</b>파트별 디테일 → 연결 → 완곡까지 목표에 맞춰 진행</li>
+        <li><b>03 Stage</b>영상 촬영이나 무대 준비까지 확장</li>
+      </ul>
+      <div class="meta">
+        <div><b>Tel</b><a href="tel:0507-1362-3897">0507-1362-3897</a></div>
+        <div><b>Hours</b>평일 13:00–22:00<br>토 12:00–20:00 · 일 휴무</div>
+        <div><b>Booking</b><a href="https://map.naver.com/p/entry/place/1298275274" target="_blank" rel="noopener">네이버 플레이스에서 예약 →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENTS -->
+<section class="contents" id="contents">
+  <div class="head reveal">
+    <div><div class="label">Contents</div><h2 style="margin-top:14px">On<br>Sta<span class="o">g</span>e</h2></div>
+    <p>인생뮤직에서는 여러 공연들이 많아요. 언제 어디서든 깜짝 공연이 열릴 수 있으니 기대해도 좋아요.</p>
+  </div>
+  <div class="feature reveal">
+    <div class="ph"><div class="fill" style="background:radial-gradient(ellipse at 50% 40%,rgba(244,121,32,.5),transparent 55%),linear-gradient(180deg,#1d1916,#0b0a09)"></div><span class="cap">퇴근송 — Open Mic</span></div>
+    <div class="ph tall"><div class="fill" style="background:linear-gradient(160deg,#2a2421,#0b0a09)"></div><span class="cap">Audience</span></div>
+  </div>
+  <div class="info">
+    <h3 class="reveal">Open Mic<span class="kr">퇴근송</span></h3>
+    <div class="reveal">
+      <p>지친 마음을 달래줄 "퇴근송" 소공연. 무대에 서도 좋고, 응원만 해도 좋아요. 뮤친(인뮤 친구)들과 함께하는 한 달에 한 번의 작은 콘서트.</p>
+      <span class="when">매달 셋째 주 토요일 · PM 8:00</span>
+      <div class="links"><a href="https://blog.naver.com/PostList.naver?blogId=inmuu_daejeon&categoryNo=9" target="_blank" rel="noopener">퇴근송 후기 보러가기 →</a></div>
+    </div>
+  </div>
+  <div class="videos reveal">
+    <div class="ph"><iframe src="https://www.youtube.com/embed/x18dbjZthpU" title="인생뮤직 대전점 라이브 영상 01" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    <div class="ph"><iframe src="https://www.youtube.com/embed/r0iZLg6NBMQ" title="인생뮤직 대전점 라이브 영상 02" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  </div>
+  <div class="info">
+    <h3 class="reveal">Live <span class="o">Clip</span><span class="kr">뮤친라이브</span></h3>
+    <div class="reveal">
+      <p>레코딩부터 라이브 영상 클립까지. 뮤친들의 찬란한 음악적 순간을 인뮤가 정성스레 담아, 나만의 라이브 클립으로 남겨드립니다.</p>
+    </div>
+  </div>
+  <div class="strip reveal">
+    <div class="ph"><div class="fill"></div><span class="cap">Season Party</span></div>
+    <div class="ph"><div class="fill" style="background:linear-gradient(160deg,#26211e,#0b0a09)"></div><span class="cap">Board Game</span></div>
+    <div class="ph"><div class="fill" style="background:radial-gradient(ellipse at 20% 80%,rgba(244,121,32,.35),transparent 55%),linear-gradient(160deg,#1f1b18,#0b0a09)"></div><span class="cap">MT</span></div>
+    <div class="ph"><div class="fill" style="background:linear-gradient(160deg,#211d1a,#0b0a09)"></div><span class="cap">Movie Night</span></div>
+  </div>
+  <div class="inmunity">
+    <h3 class="reveal">Inmu<span class="o">nity</span></h3>
+    <div class="reveal">
+      <p>인뮤 친구들과 함께하는 다채로운 일상까지. 음악으로 만난 사이, 음악 밖에서도 이어져요.</p>
+      <ul style="margin-top:20px"><li>시즌 파티</li><li>보드게임</li><li>MT</li><li>영화관람</li><li>애프터 파티</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="head reveal">
+    <div><div class="label">Pricing</div><h2 style="margin-top:14px">Take<br>A <span class="o">Class</span></h2></div>
+    <p>모든 과목은 주 1회, 회당 60분 1:1 레슨. 악기·악보·연습실은 전부 무료로 제공됩니다. 월 교습비 190,000원 (학원설립·운영등록 제5035호).</p>
+  </div>
+  <div class="tabs reveal" role="tablist">
+    <button class="tab active" data-plan="general">일반 레슨</button>
+    <button class="tab" data-plan="vocalrec">보컬 레코딩</button>
+  </div>
+  <div class="plan-table reveal">
+    <div class="plan">
+      <div class="nm">1 Month<small>4 Sessions · 1 Hour</small></div>
+      <div class="cnt"><b>4회</b>각 1회당 1시간</div>
+      <div class="prc"><span data-p="general">190,000</span><span data-p="vocalrec" hidden>210,000</span><small>원</small></div>
+      <div class="dc">가볍게 시작해 보고 싶은 분</div>
+    </div>
+    <div class="plan best">
+      <div class="nm"><span class="best-tag">Best</span><br>3 Month<small>12 Sessions · 1 Hour</small></div>
+      <div class="cnt"><b>12회</b>각 1회당 1시간</div>
+      <div class="prc"><span data-p="general">510,000</span><span data-p="vocalrec" hidden>570,000</span><small>원</small></div>
+      <div class="dc"><s data-p="general">570,000원</s><s data-p="vocalrec" hidden>630,000원</s><b>60,000원 할인</b></div>
+    </div>
+    <div class="plan">
+      <div class="nm">1 + 1<small>8 Sessions · 2 Classes</small></div>
+      <div class="cnt"><b>8회</b>A CLASS 4회 + <span data-p="general">B</span><span data-p="vocalrec" hidden>R</span> CLASS 4회</div>
+      <div class="prc"><span data-p="general">340,000</span><span data-p="vocalrec" hidden>360,000</span><small>원</small></div>
+      <div class="dc"><s data-p="general">380,000원</s><s data-p="vocalrec" hidden>400,000원</s><b>40,000원 할인</b><br>서로 다른 두 과목 등록 시<span data-p="vocalrec" hidden> · R CLASS +20,000원</span></div>
+    </div>
+  </div>
+  <div class="foot reveal">
+    <div><b>Included</b>악기 · 악보 · 연습실 무한 제공<br>스케줄 변경은 하루 전 미리 알려주시면 이동/보강 진행해 드립니다.</div>
+    <div><b>How to Start</b>네이버 예약으로 체험 클래스를 신청하시거나, 전화 · 인스타 DM · 블로그로 원하는 과목과 가능한 시간을 알려주세요.<br>결제 방법은 상담 시 안내해 드립니다.</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="spot"></div>
+  <div>
+    <div class="label reveal">Contact</div>
+    <h2 class="reveal" style="margin-top:20px">See You<br>On <span class="o">Stage</span></h2>
+    <p class="kr reveal">인뮤, 음악과 함께 더 다채로운 일상으로 초대합니다.</p>
+    <div class="btns reveal"><a href="https://booking.naver.com/booking/13/bizes/939074" target="_blank" rel="noopener" class="btn">체험 클래스 신청 →</a><a href="tel:0507-1346-3268" class="btn ghost">전화 상담 0507-1346-3268</a></div>
+  </div>
+  <div class="grid reveal">
+    <div><b>Address</b>대전 서구 둔산로31번길 72<br>501호 (5층)<br><a href="https://map.naver.com/p/search/%EC%9D%B8%EC%83%9D%EB%AE%A4%EC%A7%81%ED%95%99%EC%9B%90%20%EB%8C%80%EC%A0%84" target="_blank" rel="noopener">네이버 지도 →</a></div>
+    <div><b>Tel</b><a href="tel:0507-1346-3268">0507-1346-3268</a><br><span style="opacity:.6">인생댄스 Studio</span><br><a href="tel:0507-1362-3897">0507-1362-3897</a></div>
+    <div><b>Hours</b>평일 13:00–22:00<br>토 11:00–19:00 · 일 휴무</div>
+    <div><b>Social</b><a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener">Instagram</a><br><a href="https://blog.naver.com/inmuu_daejeon" target="_blank" rel="noopener">Naver Blog</a><br><a href="https://www.youtube.com/@in_muu_official" target="_blank" rel="noopener">YouTube (INMUU)</a></div>
+    <div><b>Registration</b>학원설립·운영등록번호<br>제5035호<br>월 교습비 190,000원</div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-top">
+    <div class="f-links">
+      <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://blog.naver.com/inmuu_daejeon" target="_blank" rel="noopener">Blog</a>
+      <a href="https://booking.naver.com/booking/13/bizes/939074" target="_blank" rel="noopener">Naver Booking</a>
+      <a href="https://inmuunity.com/" target="_blank" rel="noopener">INMUU HQ</a>
+    </div>
+    <div class="f-info">
+      © INMUU Daejeon. All rights reserved.<br>
+      501, 72 Dunsan-ro 31beon-gil, Seo-gu, Daejeon, Republic of Korea<br>
+      Tel 0507-1346-3268 · <span style="font-family:var(--font);text-transform:none">학원설립·운영등록번호 제5035호</span><br>
+      <span style="font-family:var(--font);text-transform:none">인생뮤직 대전점은 (주)인생뮤직의 가맹 지점입니다 · 본사 1600-1310 · headoffice@inmuunity.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const b=document.body,menuBtn=document.getElementById('menuBtn');
+menuBtn.addEventListener('click',()=>b.classList.toggle('open'));
+// spirograph line art (AIR-style)
+(()=>{const s=document.getElementById('spiro');let h='';const N=20;
+for(let k=0;k<N;k++){h+='<ellipse cx="200" cy="200" rx="190" ry="62" transform="rotate('+(k*180/N)+' 200 200)"/>'}
+s.innerHTML=h})();
+document.querySelectorAll('.overlay a').forEach(a=>a.addEventListener('click',()=>b.classList.remove('open')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x===t));
+  document.querySelectorAll('[data-p]').forEach(el=>el.hidden=el.dataset.p!==t.dataset.plan);
+}));
+</script>
+</body>
+</html>
