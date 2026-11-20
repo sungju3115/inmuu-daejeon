@@ -63,10 +63,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opa
 </style>
 </helmet>
 
-<header id="hdr" style="position:fixed;inset:0 0 auto;z-index:60;display:flex;justify-content:space-between;align-items:flex-start;padding:22px clamp(20px,3vw,48px);mix-blend-mode:difference;color:#F4EFE8">
+<header id="hdr" style="transition:transform .5s cubic-bezier(.22,1,.36,1);position:fixed;inset:0 0 auto;z-index:60;display:flex;justify-content:space-between;align-items:flex-start;padding:22px clamp(20px,3vw,48px);mix-blend-mode:difference;color:#F4EFE8">
   <a href="#top" onClick="{{ goHome }}" data-r="logo" style="display:inline-flex;align-items:center;gap:10px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:22px;letter-spacing:.12em;text-transform:uppercase"><span id="logomark" style="background:#F4EFE8;color:#0B0A09;padding:4px 10px 3px;transform:rotate(-1.5deg);display:inline-block">INMUU</span><span data-r="logoko" style="font-weight:500;opacity:.7;letter-spacing:.02em">인생뮤직 대전점</span></a>
 </header>
-<div style="position:fixed;top:22px;right:clamp(20px,3vw,48px);z-index:61">
+<div id="menuWrap" style="position:fixed;top:22px;right:clamp(20px,3vw,48px);z-index:61;transition:transform .5s cubic-bezier(.22,1,.36,1)">
   <button id="menuBtn" aria-label="메뉴 열기" onClick="{{ toggleMenu }}" style="height:44px;border:none;background:none;color:#0B0A09;cursor:pointer;display:flex;align-items:center;gap:8px;padding:0">
     <span data-r="menulbl" style="font-family:'Paperlogy',sans-serif;font-weight:600;font-size:28px;letter-spacing:.02em">메뉴</span>
     <span style="position:relative;width:44px;height:44px;display:block">
@@ -89,7 +89,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opa
   <div data-r="ovlinfo" style="position:absolute;left:clamp(20px,3vw,48px);bottom:40px;font-size:14px;font-weight:600;line-height:1.9;opacity:.85;z-index:1">
     <b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;letter-spacing:.2em;font-size:11px;margin-bottom:6px">INMUU DAEJEON</b>
     대전 서구 둔산로31번길 72, 501호<br>
-    <a href="tel:0507-1346-3268" style-hover="text-decoration:underline">0507-1346-3268</a><br>
+    <a href="tel:010-2354-5616" style-hover="text-decoration:underline">010-2354-5616</a><br>
     평일 13–22 · 토 11–19 · 일 휴무<br>
     학원설립·운영등록번호 제5035호<br>
     <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" style-hover="text-decoration:underline">@in_muu_daejeon</a><br>
@@ -150,7 +150,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opa
 
 <section id="place" data-page="about" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px)">
   <div data-reveal="1" data-r="split" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
-    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Our Place</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">Where<br>We <span style="color:#F47920">Play</span></h2></div>
+    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Our Place</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(64px,11vw,180px);line-height:.9;letter-spacing:-.03em">Where<br>We <span style="color:#F47920">Play</span></h2></div>
     <p style="font-size: 20px; opacity: .85; max-width: 560px; justify-self: end; align-self: end; text-align: right">둔산동 한복판, 5층 501호. <br>이야기를 나누는 라운지와, 레슨과 연습이 이루어지는 스튜디오.</p>
   </div>
   <div data-reveal="1" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:0 calc(clamp(20px,3vw,48px) * -1);padding:0 clamp(20px,3vw,48px) 12px">
@@ -220,7 +220,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opa
 
 <section id="class" data-page="class" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px);background:#F4EFE8;color:#0B0A09">
   <div data-reveal="1" data-r="split" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
-    <div><div style="font-family: Inter; font-weight: 800; font-size: 14px; letter-spacing: .22em; text-transform: uppercase; color: #F47920">Class</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">Eight<br>Ways <span style="color:#F47920">In</span></h2></div>
+    <div><div style="font-family: Inter; font-weight: 800; font-size: 14px; letter-spacing: .22em; text-transform: uppercase; color: #F47920">Class</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(64px,11vw,180px);line-height:.9;letter-spacing:-.03em">Eight<br>Ways <span style="color:#F47920">In</span></h2></div>
     <p style="font-size: 20px; opacity: .7; max-width: 560px; justify-self: end; align-self: end; font-weight: 500; text-align: right">주 1회 60분, 1:1 레슨! <br>수준과 목표에 맞춰 커리큘럼을 함께 짭니다.</p>
   </div>
   <div data-reveal="1" style="border-top:2px solid #0B0A09">
@@ -237,11 +237,20 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opa
 </section>
 
 <section id="contents" data-page="contents" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px)">
-  <div data-reveal="1" data-r="split" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
-    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Community</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">On<br>Sta<span style="color:#F47920">g</span>e</h2></div>
+  <div data-reveal="1" data-r="split" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(80px,11vw,160px)">
+    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Community</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(64px,11vw,180px);line-height:.9;letter-spacing:-.03em">On<br>Sta<span style="color:#F47920">g</span>e</h2></div>
     <p style="font-size: 20px; opacity: .85; max-width: 560px; justify-self: end; align-self: end; text-align: right">인생뮤직에서는 여러 공연들이 많아요. <br>언제 어디서든 깜짝 공연이 열릴 수 있으니 기대해도 좋습니다.</p>
   </div>
-  <div data-reveal="1" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:0 calc(clamp(20px,3vw,48px) * -1);padding:0 clamp(20px,3vw,48px) 12px">
+  <div style="margin-top:0">
+  <div data-r="split" style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,3vw,44px);letter-spacing:-.03em;line-height:.95">Open Mic<span style="font-family:'Paperlogy',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.04em;display:block">퇴근송</span></h3>
+    <div data-reveal="1">
+      <div style="max-width: 520px; text-align: left; margin-bottom: 22px; color: #F47920; font-family: 'Archivo','Paperlogy',sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15; letter-spacing: -.01em">매달 셋째 주 토요일 오후 8시</div>
+      <p style="font-size: 20px; line-height: 1.75; opacity: .8; max-width: 520px; text-align: left">지친 마음을 달래줄 "퇴근송" 소공연. 무대에 서도 좋고, 응원만 해도 좋아요. 뮤친(인뮤 친구)들과 함께하는 한 달에 한 번의 작은 콘서트.</p>
+      <div style="display:flex;gap:28px;margin-top:22px;font-size:14px;font-weight:600"><a href="https://blog.naver.com/PostList.naver?blogId=inmuu_daejeon&amp;categoryNo=9" target="_blank" rel="noopener" style="border-bottom:1px solid #F47920;padding-bottom:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">퇴근송 후기 보러가기 →</a></div>
+    </div>
+  </div>
+  <div data-reveal="1" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:clamp(32px,4vw,48px) calc(clamp(20px,3vw,48px) * -1) 0;padding:0 clamp(20px,3vw,48px) 12px">
     <img src="uploads/L1000657.JPG" alt="퇴근송 오픈마이크 1" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
     <img src="uploads/L1000635.JPG" alt="퇴근송 오픈마이크 2" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
     <img src="uploads/L1000546.JPG" alt="퇴근송 오픈마이크 3" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
@@ -267,62 +276,59 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opa
     <img src="uploads/P20260711_205439000_B5CECEE9-361E-4973-A64A-489A951489D7.JPG" alt="퇴근송 오픈마이크 23" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
     <img src="uploads/P20260613_214543325_038BA2B7-C982-4D59-9EAB-D53FE26D315D.JPG" alt="퇴근송 오픈마이크 24" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
     </div>
-  <div data-r="split" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:40px 0 0">
-    <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,72px);letter-spacing:-.03em;line-height:.95">Open Mic<span style="font-family:'Paperlogy',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.04em;display:block">퇴근송</span></h3>
-    <div data-reveal="1">
-      <div style="max-width: 520px; text-align: left; margin-bottom: 22px; color: #F47920; font-family: 'Archivo','Paperlogy',sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15; letter-spacing: -.01em">매달 셋째 주 토요일 오후 8시</div>
-      <p style="font-size: 20px; line-height: 1.75; opacity: .8; max-width: 520px; text-align: left">지친 마음을 달래줄 "퇴근송" 소공연. 무대에 서도 좋고, 응원만 해도 좋아요. 뮤친(인뮤 친구)들과 함께하는 한 달에 한 번의 작은 콘서트.</p>
-      <div style="display:flex;gap:28px;margin-top:22px;font-size:14px;font-weight:600"><a href="https://blog.naver.com/PostList.naver?blogId=inmuu_daejeon&amp;categoryNo=9" target="_blank" rel="noopener" style="border-bottom:1px solid #F47920;padding-bottom:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">퇴근송 후기 보러가기 →</a></div>
-    </div>
   </div>
-  <div data-reveal="1" data-r="pair" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:80px calc(clamp(20px,3vw,48px) * -1) 0">
-    <div style="position:relative;overflow:hidden;background:#1a1714;aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/x18dbjZthpU" title="인생뮤직 대전점 라이브 영상 01" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
-    <div style="position:relative;overflow:hidden;background:#1a1714;aspect-ratio:16/9"><iframe src="https://www.youtube.com/embed/r0iZLg6NBMQ" title="인생뮤직 대전점 라이브 영상 02" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
-  </div>
-  <div data-r="split" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:40px 0 0">
-    <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,72px);letter-spacing:-.03em;line-height:.95">Live <span style="color:#F47920">Clip</span><span style="font-family:'Paperlogy',sans-serif;font-weight:800;text-transform:none;letter-spacing:-.04em;display:block">뮤친라이브</span></h3>
-    <div data-reveal="1">
-      <p style="font-size: 20px; line-height: 1.75; opacity: .8; max-width: 520px; text-align: left">레코딩부터 라이브 영상 클립까지! 뮤친들의 찬란한 음악적 순간을 <br>인뮤가 정성스레 담아 나만의 라이브 클립으로 남겨드립니다.</p>
-    </div>
-  </div>
-  <div data-reveal="1" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:80px calc(clamp(20px,3vw,48px) * -1) 0;padding:0 clamp(20px,3vw,48px) 12px">
-    <img src="uploads/P20250527_163725000_EC6FFF3F-2848-45B5-9CC3-0C5E887019FB-2cc07c32.PNG" alt="인생뮤직 대전점 인뮤니티 일상 1" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20251118_221933000_196A8021-E114-4D04-A7A9-69886E713EFB-2001f5f0.PNG" alt="인생뮤직 대전점 인뮤니티 일상 2" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260211_185243000_A4433FA3-8B8A-4F21-A5AF-343059354E4C-8d97fff8.PNG" alt="인생뮤직 대전점 인뮤니티 일상 3" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260404_194213000_B7A43AFC-7138-41E3-9034-F98D11BEDE79-9a2553e4.PNG" alt="인생뮤직 대전점 인뮤니티 일상 4" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260424_222739033_ED1C6EE8-A2DE-41F6-B4A2-8E38888E4CBE-031a513e.JPG" alt="인생뮤직 대전점 인뮤니티 일상 5" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260526_185426480_91CB110D-E425-4D5C-8F76-76059C66E702-a1383adc.JPG" alt="인생뮤직 대전점 인뮤니티 일상 6" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260526_185448002_F1AFFC65-846C-490F-8FB5-D1DB99B97756-acadf85b.JPG" alt="인생뮤직 대전점 인뮤니티 일상 7" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260526_185541397_9EAD4A49-F975-4DDF-9D64-349D8BD13821-e18ba0f2.JPG" alt="인생뮤직 대전점 인뮤니티 일상 8" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260528_181454552_CEB11AC5-F286-499D-8C66-380731C8AEED-48b593c4.JPG" alt="인생뮤직 대전점 인뮤니티 일상 9" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260529_232706108_6D0355B3-A994-4CF0-9A0C-AC6DD9EDE6FE-12566610.JPG" alt="인생뮤직 대전점 인뮤니티 일상 10" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260529_233204756_A84EE202-A10A-4907-A248-C9E881509375-b3e9ea0f.JPG" alt="인생뮤직 대전점 인뮤니티 일상 11" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260604_210602557_61532CE2-9245-4D49-BBD8-2FF1EEC48B57-642f0ed9.JPG" alt="인생뮤직 대전점 인뮤니티 일상 12" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260630_194139575_2399B846-DD1A-4ECE-B74A-5824ADCC6B01-51125849.JPG" alt="인생뮤직 대전점 인뮤니티 일상 13" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260630_195737290_E96FA29F-4934-46FD-8EAA-5E1E1946A7AD-c63c5e00.JPG" alt="인생뮤직 대전점 인뮤니티 일상 14" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260709_215601735_2E96C6EB-8928-483B-B40D-9D53B6B35DF5-868038af.JPG" alt="인생뮤직 대전점 인뮤니티 일상 15" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260710_213503405_7F5ABACD-80BB-4749-A8AD-C2CA8E71DABD-31379264.JPG" alt="인생뮤직 대전점 인뮤니티 일상 16" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260720_155132571_B83E2426-704C-4FA5-A3DB-D553AB99F6D4-379ca65d.JPG" alt="인생뮤직 대전점 인뮤니티 일상 17" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260811_210353645_B03B1BAC-025A-4ED7-937F-5A14B4A2C953-fac663cc.JPG" alt="인생뮤직 대전점 인뮤니티 일상 18" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260813_215351873_E91C6AA5-741E-4D7D-BD41-3C4578F358AC-a0d003a6.JPG" alt="인생뮤직 대전점 인뮤니티 일상 19" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260817_201542571_7AE1BE24-A615-4BC5-A07F-56E294EDE297-af5b9b7a.JPG" alt="인생뮤직 대전점 인뮤니티 일상 20" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260817_212022191_5CDA6BE5-DBF0-44CC-920F-3A9098C4FBE3-5a71ace6.JPG" alt="인생뮤직 대전점 인뮤니티 일상 21" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260824_215959010_2075920B-47FD-4C19-89EC-3FC518393BC5-4b258d07.JPG" alt="인생뮤직 대전점 인뮤니티 일상 22" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260830_200946826_1CC94079-1CAB-4766-91B7-95FDD9414474-49cd4645.JPG" alt="인생뮤직 대전점 인뮤니티 일상 23" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-    <img src="uploads/P20260830_215717244_F1E0E596-36E9-4795-A9A6-660A3E0EFC7F-2121ed3e.JPG" alt="인생뮤직 대전점 인뮤니티 일상 24" loading="lazy" style="height:clamp(300px,36vw,540px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
-  </div>
-  <div data-r="split" style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end">
-    <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(34px,5vw,72px);letter-spacing:-.03em;line-height:.95">Inmu<span style="color:#F47920">nity</span></h3>
+  <div style="margin-top:clamp(100px,13vw,200px)">
+  <div data-r="split" style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,3vw,44px);letter-spacing:-.03em;line-height:.95">Inmu<span style="color:#F47920">nity</span></h3>
     <div data-reveal="1">
       <p style="font-size: 20px; line-height: 1.75; opacity: .8; max-width: 520px; text-align: left">인뮤 친구들과 함께하는 다채로운 일상까지. <br>음악으로 만난 사이, 음악 밖에서도 이어져요.</p>
       <ul style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px"><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">시즌 파티</li><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">보드게임</li><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">MT</li><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">영화관람</li><li style="border:1px solid rgba(11,10,9,.14);padding:10px 16px;font-size:14px;font-weight:600">애프터 파티</li></ul>
     </div>
   </div>
+  <div data-reveal="1" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:thin;margin:0 calc(clamp(20px,3vw,48px) * -1);padding:0 clamp(20px,3vw,48px) 12px;margin:clamp(40px,5vw,64px) calc(clamp(20px,3vw,48px) * -1) 0">
+    <img src="uploads/P20260630_194139575_2399B846-DD1A-4ECE-B74A-5824ADCC6B01-51125849.JPG" alt="인뮤니티 일상 1" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260630_195737290_E96FA29F-4934-46FD-8EAA-5E1E1946A7AD-c63c5e00.JPG" alt="인뮤니티 일상 2" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260709_215601735_2E96C6EB-8928-483B-B40D-9D53B6B35DF5-868038af.JPG" alt="인뮤니티 일상 3" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260710_213503405_7F5ABACD-80BB-4749-A8AD-C2CA8E71DABD-31379264.JPG" alt="인뮤니티 일상 4" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260720_155132571_B83E2426-704C-4FA5-A3DB-D553AB99F6D4-379ca65d.JPG" alt="인뮤니티 일상 5" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260811_210353645_B03B1BAC-025A-4ED7-937F-5A14B4A2C953-fac663cc.JPG" alt="인뮤니티 일상 6" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260813_215351873_E91C6AA5-741E-4D7D-BD41-3C4578F358AC-a0d003a6.JPG" alt="인뮤니티 일상 7" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260817_201542571_7AE1BE24-A615-4BC5-A07F-56E294EDE297-af5b9b7a.JPG" alt="인뮤니티 일상 8" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260817_212022191_5CDA6BE5-DBF0-44CC-920F-3A9098C4FBE3-5a71ace6.JPG" alt="인뮤니티 일상 9" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260824_215959010_2075920B-47FD-4C19-89EC-3FC518393BC5-4b258d07.JPG" alt="인뮤니티 일상 10" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260830_200946826_1CC94079-1CAB-4766-91B7-95FDD9414474-49cd4645.JPG" alt="인뮤니티 일상 11" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+    <img src="uploads/P20260830_215717244_F1E0E596-36E9-4795-A9A6-660A3E0EFC7F-2121ed3e.JPG" alt="인뮤니티 일상 12" loading="lazy" style="height:clamp(320px,40vw,600px);width:auto;flex:none;object-fit:cover;scroll-snap-align:start;background:#E8E4DC">
+  </div>
+  </div>
+  <div style="margin-top:clamp(100px,13vw,200px)">
+  <div data-r="split" style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <h3 data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(28px,3vw,44px);letter-spacing:-.03em;line-height:.95">Insta<span style="color:#F47920">gram</span></h3>
+    <div data-reveal="1">
+      <div style="max-width: 520px; text-align: left; margin-bottom: 22px; color: #F47920; font-family: 'Archivo','Paperlogy',sans-serif; font-weight: 800; font-size: 24px; line-height: 1.15; letter-spacing: -.01em">@in_muu_daejeon</div>
+      <p style="font-size: 20px; line-height: 1.75; opacity: .8; max-width: 520px; text-align: left">인생뮤직 대전점의 레슨, 공연, 뮤친들의 일상을 인스타그램에서 가장 먼저 만나보세요.</p>
+      <div style="display:flex;gap:28px;margin-top:22px;font-size:14px;font-weight:600"><a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" style="border-bottom:1px solid #F47920;padding-bottom:2px;transition:color .3s ease" style-hover="color:#F47920">인스타그램 팔로우하기 →</a></div>
+    </div>
+  </div>
+  <div data-reveal="1" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(3px,.5vw,8px);margin-top:clamp(32px,4vw,48px)">
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 1" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20250527_163725000_EC6FFF3F-2848-45B5-9CC3-0C5E887019FB-2cc07c32.PNG" alt="인생뮤직 대전점 인스타그램 1" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 2" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20251118_221933000_196A8021-E114-4D04-A7A9-69886E713EFB-2001f5f0.PNG" alt="인생뮤직 대전점 인스타그램 2" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 3" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260211_185243000_A4433FA3-8B8A-4F21-A5AF-343059354E4C-8d97fff8.PNG" alt="인생뮤직 대전점 인스타그램 3" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 4" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260404_194213000_B7A43AFC-7138-41E3-9034-F98D11BEDE79-9a2553e4.PNG" alt="인생뮤직 대전점 인스타그램 4" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 5" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260424_222739033_ED1C6EE8-A2DE-41F6-B4A2-8E38888E4CBE-031a513e.JPG" alt="인생뮤직 대전점 인스타그램 5" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 6" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260526_185426480_91CB110D-E425-4D5C-8F76-76059C66E702-a1383adc.JPG" alt="인생뮤직 대전점 인스타그램 6" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 7" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260526_185448002_F1AFFC65-846C-490F-8FB5-D1DB99B97756-acadf85b.JPG" alt="인생뮤직 대전점 인스타그램 7" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 8" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260526_185541397_9EAD4A49-F975-4DDF-9D64-349D8BD13821-e18ba0f2.JPG" alt="인생뮤직 대전점 인스타그램 8" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 9" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260528_181454552_CEB11AC5-F286-499D-8C66-380731C8AEED-48b593c4.JPG" alt="인생뮤직 대전점 인스타그램 9" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 10" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260529_232706108_6D0355B3-A994-4CF0-9A0C-AC6DD9EDE6FE-12566610.JPG" alt="인생뮤직 대전점 인스타그램 10" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 11" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260529_233204756_A84EE202-A10A-4907-A248-C9E881509375-b3e9ea0f.JPG" alt="인생뮤직 대전점 인스타그램 11" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+    <a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" aria-label="인스타그램 게시물 12" style="display:block;aspect-ratio:1/1;overflow:hidden;background:#E8E4DC"><img src="uploads/P20260604_210602557_61532CE2-9245-4D49-BBD8-2FF1EEC48B57-642f0ed9.JPG" alt="인생뮤직 대전점 인스타그램 12" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,1,.36,1),opacity .3s ease" style-hover="transform:scale(1.04);opacity:.85"></a>
+  </div>
+  </div>
 </section>
 
 <section id="pricing" data-page="pricing" style="padding:clamp(90px,12vw,180px) clamp(20px,3vw,48px);background:#F4EFE8;color:#0B0A09">
   <div data-reveal="1" data-r="split" style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)">
-    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Pricing</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.5vw,100px);line-height:.9;letter-spacing:-.03em">INMUU<br><span style="color: rgb(244, 121, 32);">Class</span></h2></div>
+    <div><div style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Pricing</div><h2 style="margin-top:14px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(64px,11vw,180px);line-height:.9;letter-spacing:-.03em">INMUU<br><span style="color: rgb(244, 121, 32);">Class</span></h2></div>
     <p style="font-size: 20px; opacity: .7; max-width: 560px; justify-self: end; align-self: end; text-align: right">모든 과목은 주 1회, 회당 60분 1:1 레슨<br>악기·악보·연습실은 전부 무료로 제공됩니다.<br>월 교습비 190,000원 (학원설립·운영등록 제5035호).</p>
   </div>
   <div data-reveal="1" style="display:inline-flex;border:2px solid #0B0A09;margin-bottom:36px" role="tablist">
@@ -361,11 +367,11 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opa
     <div data-reveal="1" style="font-family:'Archivo','Paperlogy',sans-serif;font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#F47920">Contact</div>
     <h2 data-reveal="1" style="margin-top:20px;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(56px,12vw,200px);line-height:.85;letter-spacing:-.045em;position:relative">See You<br>On <span style="color:#F47920">Stage</span></h2>
     <p data-reveal="1" style="font-size:clamp(18px,2vw,26px);font-weight:600;margin-top:30px;max-width:640px;letter-spacing:-.02em">인뮤, 음악과 함께 더 다채로운 일상으로 초대합니다.</p>
-    <div data-reveal="1" style="display:flex;gap:14px;flex-wrap:wrap"><a href="https://booking.naver.com/booking/13/bizes/939074" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;background:#F47920;color:#0B0A09;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="background:#0B0A09;color:#F4EFE8">체험 클래스 신청 →</a><a href="tel:0507-1346-3268" style="display:inline-flex;align-items:center;gap:12px;background:none;color:#0B0A09;border:2px solid #0B0A09;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="border-color:#F47920;color:#F47920">전화 상담 0507-1346-3268</a></div>
+    <div data-reveal="1" style="display:flex;gap:14px;flex-wrap:wrap"><a href="https://booking.naver.com/booking/13/bizes/939074" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;background:#F47920;color:#0B0A09;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="background:#0B0A09;color:#F4EFE8">체험 클래스 신청 →</a><a href="tel:010-2354-5616" style="display:inline-flex;align-items:center;gap:12px;background:none;color:#0B0A09;border:2px solid #0B0A09;font-family:'Archivo','Paperlogy',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;padding:18px 26px;margin-top:36px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="border-color:#F47920;color:#F47920">전화 상담 010-2354-5616</a></div>
   </div>
   <div data-reveal="1" data-r="info" style="display:grid;grid-template-columns:repeat(5,1fr);gap:30px;margin-top:80px;padding-top:28px;border-top:1px solid rgba(11,10,9,.14);font-size:15px;line-height:1.8;position:relative">
     <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Address</b>대전 서구 둔산로31번길 72<br>501호 (5층)<br><a href="https://map.naver.com/p/search/%EC%9D%B8%EC%83%9D%EB%AE%A4%EC%A7%81%ED%95%99%EC%9B%90%20%EB%8C%80%EC%A0%84" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">네이버 지도 →</a></div>
-    <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Tel</b><a href="tel:0507-1346-3268" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">0507-1346-3268</a><br><span style="opacity:.6">인생댄스 Studio</span><br><a href="tel:0507-1362-3897" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">0507-1362-3897</a></div>
+    <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Tel</b><a href="tel:010-2354-5616" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">010-2354-5616</a></div>
     <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Hours</b>평일 13:00–22:00<br>토 11:00–19:00 · 일 휴무</div>
     <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Social</b><a href="https://www.instagram.com/in_muu_daejeon/" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">Instagram</a><br><a href="https://blog.naver.com/inmuu_daejeon" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">Naver Blog</a><br><a href="https://www.youtube.com/@in_muu_official" target="_blank" rel="noopener" style="text-decoration:underline;text-decoration-thickness:0.5px;text-underline-offset:2px;transition:transform .5s cubic-bezier(.22,1,.36,1),font-weight .5s cubic-bezier(.22,1,.36,1),color .3s ease,background-color .3s ease,border-color .3s ease,opacity .3s ease" style-hover="color:#F47920">YouTube (INMUU)</a></div>
     <div><b style="display:block;font-family:'Archivo','Paperlogy',sans-serif;font-size:11px;letter-spacing:.22em;color:#F47920;margin-bottom:8px">Registration</b>학원설립·운영등록번호<br>제5035호<br>월 교습비 190,000원</div>
@@ -383,7 +389,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opa
     <div data-r="foot" style="line-height:1.8;text-align:right">
       © INMUU Daejeon. All rights reserved.<br>
       <span style="font-family:'Paperlogy',sans-serif;text-transform:none">대전광역시 서구 둔산로31번길 72, 501호</span><br>
-      Tel 0507-1346-3268 · <span style="font-family:'Paperlogy',sans-serif;text-transform:none">학원설립·운영등록번호 제5035호</span><br>
+      Tel 010-2354-5616 · <span style="font-family:'Paperlogy',sans-serif;text-transform:none">학원설립·운영등록번호 제5035호</span><br>
       <span style="font-family:'Paperlogy',sans-serif;text-transform:none">인생뮤직 대전점은 (주)인생뮤직의 가맹 지점입니다 · 본사 1600-1310 · headoffice@inmuunity.com</span>
     </div>
   </div>
@@ -433,11 +439,28 @@ class Component extends DCLogic {
     window.scrollTo({ top: 0, behavior: 'instant' });
     if (this._open) this._setOpen(false);
   }
-  componentWillUnmount() { window.removeEventListener('hashchange', this._onHash); }
+  _initAutoHide() {
+    let last = window.scrollY, hidden = false;
+    this._onScrollHide = () => {
+      const y = window.scrollY, d = y - last;
+      if (Math.abs(d) < 6) return;
+      const hide = !this._open && d > 0 && y > 120;
+      if (hide !== hidden) {
+        hidden = hide;
+        const t = hide ? 'translateY(-140%)' : 'translateY(0)';
+        const a = document.getElementById('hdr'), b = document.getElementById('menuWrap');
+        if (a) a.style.transform = t; if (b) b.style.transform = t;
+      }
+      last = y;
+    };
+    window.addEventListener('scroll', this._onScrollHide, { passive: true });
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this._onScrollHide); window.removeEventListener('hashchange', this._onHash); }
   componentDidMount() {
     this._onHash = () => this._route();
     window.addEventListener('hashchange', this._onHash);
     this._route();
+    this._initAutoHide();
     const s = document.getElementById('spiro');
     if (s) {
       let h = '';
